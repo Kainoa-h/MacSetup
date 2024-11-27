@@ -1,12 +1,6 @@
 #!/bin/bash
 
 if [ "$SENDER" = "aerospace_workspace_change" ]; then
-  # echo info is "$FOCUSED_WORKSPACE" >> ./aaa
-  echo $PREV_WORKSPACE >> ./prev
-  # echo sender is "$SENDER" >> ./aaa
-  #space="$(echo "$INFO" | jq -r '.space')"
-  #apps="$(echo "$INFO" | jq -r '.apps | keys[]')"
-
   prevapps=$(aerospace list-windows --workspace "$PREV_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
   if [ "${prevapps}" != "" ]; then
     sketchybar --set space.$PREV_WORKSPACE drawing=on
