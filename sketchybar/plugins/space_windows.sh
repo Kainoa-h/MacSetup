@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$SENDER" = "aerospace_workspace_change" ]; then
+  # echo info is "$FOCUSED_WORKSPACE" >> ./aaa
+  echo $PREV_WORKSPACE >> ./prev
+  # echo sender is "$SENDER" >> ./aaa
+  #space="$(echo "$INFO" | jq -r '.space')"
+  #apps="$(echo "$INFO" | jq -r '.apps | keys[]')"
+
+  prevapps=$(aerospace list-windows --workspace "$PREV_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+  if [ "${prevapps}" != "" ]; then
+    sketchybar --set space.$PREV_WORKSPACE drawing=on
+  else
+    sketchybar --set space.$PREV_WORKSPACE drawing=off
+  fi
+
+  apps=$(aerospace list-windows --workspace "$FOCUSED_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+  sketchybar --set space.$FOCUSED_WORKSPACE drawing=on
+  icon_strip=" "
+  if [ "${apps}" != "" ]; then
+    while read -r app
+    do
+      icon_strip+=" $($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
+    done <<< "${apps}"
+  else
+    icon_strip=""
+  fi
+  sketchybar --set space.$FOCUSED_WORKSPACE label="$icon_strip"
+fi
