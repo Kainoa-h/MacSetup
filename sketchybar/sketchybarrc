@@ -20,7 +20,7 @@ sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
 default=(
   padding_left=5
   padding_right=5
-  icon.font="SF Pro:Semibold:18.0"
+  icon.font="Hack Nerd Font:Bold:17.0"
   label.font="SF Pro:Semibold:17.0"
   icon.color=0xffffffff
   label.color=0xffffffff
@@ -104,16 +104,16 @@ sketchybar --add item front_app left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-  --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" icon.font="Hack Nerd Font:Bold:17.0" \
+  --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
   --add item volume right \
   --set volume script="$PLUGIN_DIR/volume.sh" \
   --subscribe volume volume_change \
   --add item battery right \
-  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" icon.font="Hack Nerd Font:Bold:17.0" \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change \
   --add item swap e \
   --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh" \
-  icon="" icon.font="Hack Nerd Font:Bold:17.0" \
+  icon="" \
   label.font="Hack Nerd Font:Italic:13.0" \
   icon.color=0x44FFFFFF \
   label.color=0x44FFFFFF
