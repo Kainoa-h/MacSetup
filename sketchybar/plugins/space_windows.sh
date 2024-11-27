@@ -13,7 +13,7 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
   else
     sketchybar --set space.$PREV_WORKSPACE drawing=off
   fi
-#aerospace list-windows --workspace 1 | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}'
+
   apps=$(aerospace list-windows --workspace "$FOCUSED_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
   sketchybar --set space.$FOCUSED_WORKSPACE drawing=on
   icon_strip=" "

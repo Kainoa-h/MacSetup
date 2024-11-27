@@ -1,7 +1,5 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
+# A simple sketchybar config for aerospace users to get started with
+# Not too different from the base starting config!
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
@@ -34,15 +32,12 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-##### Adding Mission Control Space Indicators #####
-# Let's add some mission control spaces:
-# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
-# to indicate active and available mission control spaces.
+##### Adding aeropsace layouts #####
 
-###### Adding aeropsace layouts
+# Add the aerospace_workspace_change event we specified in aerospace.toml
 sketchybar --add event aerospace_workspace_change
-#SPACE_IDS=(1 2 3 B O P T)
 
+# This only works for single monitor configs!
 for sid in $(aerospace list-workspaces --monitor 1); do
   #for sid in "${SPACE_IDS[@]}"; do
   sketchybar --add item space.$sid left \
@@ -65,15 +60,10 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
 
-### Loading icons on first init
-#for sid in "${SPACE_IDS[@]}"; do
+# Load Icons on startup
 for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
   apps=$(aerospace list-windows --workspace "$sid" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
-  # if [ "${apps}" != "" ]; then
-  #   sketchybar --set space.$sid drawing=on
-  # else
-  #   sketchybar --set space.$sid drawing=off
-  # fi
+
   sketchybar --set space.$sid drawing=on
 
   icon_strip=" "
@@ -86,15 +76,7 @@ for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
   fi
   sketchybar --set space.$sid label="$icon_strip"
 done
-##### Adding Left Items #####
-# We add some regular items to the left side of the bar, where
-# only the properties deviating from the current defaults need to be set
 
-# sketchybar --add item chevron left \
-#            --set chevron icon= label.drawing=off \
-#            --add item front_app left \
-#            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-#            --subscribe front_app front_app_switched
 
 sketchybar --add item space_separator left \
   --set space_separator icon="💩" \
