@@ -1,7 +1,7 @@
 # Personal MacOS configs & dotfiles
 ![desktop screenshot](image.png)
 ## Kanata | [./kanata](./kanata) | [link 2 project](https://github.com/jtroo/kanata)
-Copied off [this video](https://github.com/dreamsofcode-io/escapecontrol)
+Copied off [this](https://github.com/dreamsofcode-io/escapecontrol)
 
 turns caps lock into esc (on tap) and ctrl (on hold)
 
