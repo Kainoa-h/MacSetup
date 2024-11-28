@@ -17,6 +17,7 @@ Mostly default config
  - [Nerd Font](https://formulae.brew.sh/cask/font-hack-nerd-font)
 
 ## JankyBorders | [./borders](./borders) | [link 2 project](https://github.com/FelixKratz/JankyBorders)
+run `brew services start borders` after installing
 
 ## ZSH (with OMZ) | [./zsh](./zsh) | [link 2 project](https://github.com/ohmyzsh/ohmyzsh)
 Add symlink to home dir `ln -s ~/.config/zsh/zshrc ~/.zshrc`
