@@ -10,7 +10,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=34 blur_radius=30 color=0x00000000 #color=0xFF3A3C3B margin=10 y_offset=5
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -32,8 +32,10 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-##### Adding aeropsace layouts #####
+sketchybar --add item hahamarginleft left\
+  --set hahamarginleft padding_right=0 padding_left=0 width=15
 
+##### Adding aeropsace layouts #####
 # Add the aerospace_workspace_change event we specified in aerospace.toml
 sketchybar --add event aerospace_workspace_change
 
@@ -46,11 +48,13 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     drawing=off \
     background.color=0x44ffffff \#0xAAFF00FF \
     background.corner_radius=5 \
-    background.height=20 \
     background.drawing=on \
     background.border_color=0xAAFFFFFF \
     background.border_width=0 \
-    background.height=25 \
+    background.height=23 \
+    background.padding_right=5 \
+    background.padding_left=5 \
+    y_offset=-2 \
     icon="$sid" \
     icon.padding_left=10 \
     label.font="sketchybar-app-font:Regular:16.0" \
@@ -81,20 +85,31 @@ for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
   sketchybar --set space.$sid label="$icon_strip"
 done
 
+sketchybar --add item hahamarginleftRight left\
+  --set hahamarginleftRight padding_right=0 padding_left=0 width=0 margin_right=0 margin_left=0
 
-sketchybar --add item space_separator left \
+
+# Front app!!
+# sketchybar --add item front_app q \
+#   --set front_app icon.drawing=off \
+#   label.padding_left=0 \
+#   label.margin_left=0 \
+#   script="$PLUGIN_DIR/front_app.sh" \
+#   --subscribe front_app front_app_switched
+
+sketchybar --add item space_separator q \
   --set space_separator icon="💩" \
-  icon.padding_left=4 \
+  icon.padding_left=20 \
+  icon.padding_right=0 \
+  icon.margin_right=0 \
   label.drawing=off \
+  label.padding_left=0 \
+  label.margin_left=0 \
   background.drawing=off \
   script="$PLUGIN_DIR/space_windows.sh" \
   --subscribe space_separator aerospace_workspace_change
 
-# Front app!!
-sketchybar --add item front_app left \
-  --set front_app icon.drawing=off \
-  script="$PLUGIN_DIR/front_app.sh" \
-  --subscribe front_app front_app_switched
+
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -102,7 +117,7 @@ sketchybar --add item front_app left \
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
 # Some items refresh on a fixed cycle, e.g. the clock runs its script once
-# every 10s. Other items respond to events they subscribe to, e.g. the
+# every 10s. Other gititems respond to events they subscribe to, e.g. the
 # volume.sh script is only executed once an actual change in system audio
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
@@ -121,6 +136,19 @@ sketchybar --add item clock right \
   label.font="Hack Nerd Font:Italic:13.0" \
   icon.color=0x44FFFFFF \
   label.color=0x44FFFFFF
+
+#### Groups !!! ####
+sketchybar --add bracket spaces '/space\..*/' hahamarginleft hahamarginleftRight\
+  --set spaces background.color=0xDA3A3C3B \
+  background.corner_radius=10 \
+  background.height=30 \
+  y_offset=-2
+
+# sketchybar --add bracket frontappbracket space_separator front_app \
+#   --set frontappbracket background.color=0xDA3A3C3B \
+#   background.corner_radius=10 \
+#   background.height=30 \
+#   y_offset=-2
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

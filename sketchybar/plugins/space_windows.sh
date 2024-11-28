@@ -4,7 +4,7 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
   prevapps=$(aerospace list-windows --workspace "$PREV_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
   if [ "${prevapps}" != "" ]; then
     sketchybar --set space.$PREV_WORKSPACE drawing=on
-    icon_strip=" "
+    icon_strip=""
     while read -r app
     do
       icon_strip+=" $($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
@@ -16,7 +16,7 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
 
   apps=$(aerospace list-windows --workspace "$FOCUSED_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
   sketchybar --set space.$FOCUSED_WORKSPACE drawing=on
-  icon_strip=" "
+  icon_strip=""
   if [ "${apps}" != "" ]; then
     while read -r app
     do
