@@ -10,7 +10,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=34 blur_radius=30 color=0x00000000 #color=0xFF3A3C3B margin=10 y_offset=5
+sketchybar --bar position=top height=37 blur_radius=30 color=0x00000000 #color=0xFF3A3C3B margin=10 y_offset=5
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -29,7 +29,7 @@ default=(
   label.padding_left=4
   label.padding_right=4
   updates=on
-  y_offset=-2
+  y_offset=-3
 )
 sketchybar --default "${default[@]}"
 
@@ -56,7 +56,6 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     background.height=23 \
     background.padding_right=5 \
     background.padding_left=5 \
-    y_offset=-2 \
     icon="$sid" \
     icon.shadow.drawing=off \
     icon.padding_left=10 \
@@ -141,13 +140,11 @@ sketchybar --add bracket spaces '/space\..*/' hahamarginleft hahamarginleftRight
   --set spaces background.color=0xDAfef3c7 \
   background.corner_radius=10 \
   background.height=30 \
-  y_offset=-2
 
 sketchybar --add bracket rightItems clock volume battery \
   --set rightItems background.color=0xDAfef3c7 \
   background.corner_radius=10 \
   background.height=30 \
-  y_offset=-2
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
