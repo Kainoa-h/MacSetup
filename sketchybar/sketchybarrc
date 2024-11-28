@@ -22,15 +22,18 @@ default=(
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="SF Pro:Semibold:17.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
+  icon.color=0xBB352f36
+  label.color=0xBB352f36
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
   label.padding_right=4
   updates=on
+  y_offset=-2
 )
 sketchybar --default "${default[@]}"
+
+sketchybar --add item hamarginleft left --set hahamarginleft padding_right=0 padding_left=0 width=5
 
 sketchybar --add item hahamarginleft left --set hahamarginleft padding_right=0 padding_left=0 width=15
 
@@ -49,19 +52,20 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     background.corner_radius=5 \
     background.drawing=on \
     background.border_color=0xAAFFFFFF \
-    background.border_width=0 \
+    background.border_width=1 \
     background.height=23 \
     background.padding_right=5 \
     background.padding_left=5 \
     y_offset=-2 \
     icon="$sid" \
     icon.padding_left=10 \
+    icon.shadow.color=0x80000000 \
     label.font="sketchybar-app-font:Regular:16.0" \
     label.padding_right=20 \
     label.padding_left=0 \
     label.y_offset=-1 \
     label.shadow.drawing=off \
-    label.shadow.color=0xA0000000 \
+    label.shadow.color=0x80000000 \
     label.shadow.distance=4 \
     click_script="aerospace workspace $sid" \
     script="$CONFIG_DIR/plugins/aerospace.sh $sid"
@@ -117,6 +121,8 @@ sketchybar --add item space_separator q \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
+sketchybar --add item hahamarginrirrght right --set hahamarginrirrght margin_left=0
+
 sketchybar --add item clock right \
   --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
   --add item volume right \
@@ -133,22 +139,17 @@ sketchybar --add item clock right \
   label.color=0x44FFFFFF
 
 #### Groups !!! ####
-sketchybar --add bracket spaces '/space\..*/' hahamarginleft hahamarginleftRight --set spaces background.color=0xDA3A3C3B \
+sketchybar --add bracket spaces '/space\..*/' hahamarginleft hahamarginleftRight \
+  --set spaces background.color=0xDAfef3c7 \
   background.corner_radius=10 \
   background.height=30 \
   y_offset=-2
 
-sketchybar --add bracket rightItems clock volume battery swap
-  --set rightItems background.color=0xDA3A3C3B \
+sketchybar --add bracket rightItems clock volume battery \
+  --set rightItems background.color=0xDAfef3c7 \
   background.corner_radius=10 \
   background.height=30 \
   y_offset=-2
-
-# sketchybar --add bracket frontappbracket space_separator front_app \
-#   --set frontappbracket background.color=0xDA3A3C3B \
-#   background.corner_radius=10 \
-#   background.height=30 \
-#   y_offset=-2
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
