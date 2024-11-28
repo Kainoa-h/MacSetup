@@ -128,8 +128,10 @@ sketchybar --add item clock right \
   --add item battery right \
   --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change \
+  --add item wifi right \
+  --set wifi update_freq=20 script="$PLUGIN_DIR/wifi.sh" icon.padding_right=0 label.padding_left=0 label.font="SF Pro:Italic:12.0" label.y_offset=-3 \
   --add item swap e \
-  --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh" \
+  --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh"\
   icon="" \
   label.font="Hack Nerd Font:Italic:13.0" \
   icon.color=0x44FFFFFF \
@@ -141,7 +143,7 @@ sketchybar --add bracket spaces '/space\..*/' hahamarginleft hahamarginleftRight
   background.corner_radius=10 \
   background.height=30 \
 
-sketchybar --add bracket rightItems clock volume battery \
+sketchybar --add bracket rightItems clock volume battery wifi \
   --set rightItems background.color=0xDAfef3c7 \
   background.corner_radius=10 \
   background.height=30 \
