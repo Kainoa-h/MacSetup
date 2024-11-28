@@ -32,8 +32,7 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-sketchybar --add item hahamarginleft left\
-  --set hahamarginleft padding_right=0 padding_left=0 width=15
+sketchybar --add item hahamarginleft left --set hahamarginleft padding_right=0 padding_left=0 width=15
 
 ##### Adding aeropsace layouts #####
 # Add the aerospace_workspace_change event we specified in aerospace.toml
@@ -85,9 +84,7 @@ for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
   sketchybar --set space.$sid label="$icon_strip"
 done
 
-sketchybar --add item hahamarginleftRight left\
-  --set hahamarginleftRight padding_right=0 padding_left=0 width=0 margin_right=0 margin_left=0
-
+sketchybar --add item hahamarginleftRight left --set hahamarginleftRight padding_right=0 padding_left=0 width=0 margin_right=0 margin_left=0
 
 # Front app!!
 # sketchybar --add item front_app q \
@@ -108,8 +105,6 @@ sketchybar --add item space_separator q \
   background.drawing=off \
   script="$PLUGIN_DIR/space_windows.sh" \
   --subscribe space_separator aerospace_workspace_change
-
-
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -138,8 +133,13 @@ sketchybar --add item clock right \
   label.color=0x44FFFFFF
 
 #### Groups !!! ####
-sketchybar --add bracket spaces '/space\..*/' hahamarginleft hahamarginleftRight\
-  --set spaces background.color=0xDA3A3C3B \
+sketchybar --add bracket spaces '/space\..*/' hahamarginleft hahamarginleftRight --set spaces background.color=0xDA3A3C3B \
+  background.corner_radius=10 \
+  background.height=30 \
+  y_offset=-2
+
+sketchybar --add bracket rightItems clock volume battery swap
+  --set rightItems background.color=0xDA3A3C3B \
   background.corner_radius=10 \
   background.height=30 \
   y_offset=-2
