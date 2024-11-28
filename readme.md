@@ -11,6 +11,7 @@ Mostly default config
  - Removed `alt+shift+f` as it confilcted with auto format keybind :p
 
 ## SketchyBar | [./sketchybar](./sketchybar) | [link 2 project](https://github.com/FelixKratz/SketchyBar)
+![Sketchy Bar](sb.png)
 #### Dependencies:
  - [jq](https://jqlang.github.io/jq/)
  - SF [fonts](https://formulae.brew.sh/cask/font-sf-pro) & [symbols](https://formulae.brew.sh/cask/sf-symbols#default)
