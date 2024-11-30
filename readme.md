@@ -27,3 +27,9 @@ Add symlink to home dir `ln -s ~/.config/zsh/zshrc ~/.zshrc`
 
 ## NVIM | [./nvim](./nvim) | [link 2 project](https://github.com/folke/lazy.nvim)
 just [lazy nvim](https://www.lazyvim.org/)
+
+## CLI Tools:
+ - [zoxide](https://github.com/ajeetdsouza/zoxide)
+ - [yazi](https://yazi-rs.github.io/)
+ - [zellij](https://zellij.dev/)
+ - [7zip](https://formulae.brew.sh/formula/sevenzip)
