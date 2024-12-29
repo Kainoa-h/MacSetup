@@ -1,0 +1,9 @@
+background = 000000
+foreground = ffffff
+background-opacity = 0.7
+
+
+font-family = ComicShannsMono Nerd Font
+font-size = 18
+
+macos-titlebar-style = hidden
