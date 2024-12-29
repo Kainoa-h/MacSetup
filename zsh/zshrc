@@ -105,6 +105,9 @@ function lazygit() {
 alias kan="sudo ~/Applications/kanata_macos_arm64 --cfg ~/.config/kanata/kanata_caps2esc.kbd > /dev/null"
 alias y="yazi"
 alias cd="z"
+function ij() {
+  open -a "/Applications/IntelliJ IDEA CE.app/Contents/MacOS/idea" "$1"
+}
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
