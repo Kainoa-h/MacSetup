@@ -108,6 +108,7 @@ alias cd="z"
 function ij() {
   open -a "/Applications/IntelliJ IDEA CE.app/Contents/MacOS/idea" "$1"
 }
+alias gi="cp $HOME/.config/templateGitIgnore.txt ./.gitignore"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
