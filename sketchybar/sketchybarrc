@@ -1,7 +1,9 @@
+#!/bin/bash
+
 # A simple sketchybar config for aerospace users to get started with
 # Not too different from the base starting config!
-
 PLUGIN_DIR="$CONFIG_DIR/plugins"
+source "$PLUGIN_DIR/colors.sh"
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
@@ -10,7 +12,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=37 blur_radius=30 color=0x00000000 #color=0xFF3A3C3B margin=10 y_offset=5
+sketchybar --bar position=top height=37 color=$TRANSPARENT
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -22,8 +24,8 @@ default=(
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="SF Pro:Semibold:17.0"
-  icon.color=0xBB352f36
-  label.color=0xBB352f36
+  icon.color=$TEXT_GREY
+  label.color=$TEXT_GREY
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
@@ -48,10 +50,8 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     --subscribe space.$sid aerospace_workspace_change \
     --set space.$sid \
     drawing=off \
-    background.color=0x44ffffff \#0xAAFF00FF \
     background.corner_radius=5 \
     background.drawing=on \
-    background.border_color=0xAAFFFFFF \
     background.border_width=1 \
     background.height=23 \
     background.padding_right=5 \
@@ -126,7 +126,7 @@ sketchybar --add item clock right \
   --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh"\
   icon="" \
   label.font="Hack Nerd Font:Italic:13.0" \
-  background.color=0xDAfef3c7 \
+  background.color=$BACKGROUND \
   background.corner_radius=10 \
   background.drawing=on \
   background.height=30 \
@@ -136,12 +136,12 @@ sketchybar --add item clock right \
 
 #### Groups !!! ####
 sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight \
-  --set spaces background.color=0xDAfef3c7 \
+  --set spaces background.color=$BACKGROUND \
   background.corner_radius=10 \
   background.height=30 \
 
 sketchybar --add bracket rightItems clock volume battery wifi \
-  --set rightItems background.color=0xDAfef3c7 \
+  --set rightItems background.color=$BACKGROUND \
   background.corner_radius=10 \
   background.height=30 \
 

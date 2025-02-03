@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+source "$CONFIG_DIR/plugins/colors.sh"
 
-DEFCOLOR="0xBB352f36"
-ALERTCOLOR="0xAAFF0000"
+DEFCOLOR=$TEXT_GREY
+ALERTCOLOR=$TEXT_RED
 TOTALSWAP="$(sysctl vm.swapusage | awk '{print $4}')"
 
 clr=""
