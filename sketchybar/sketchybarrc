@@ -124,18 +124,30 @@ sketchybar --add item clock right \
   \
   --add item wifi right \
   --set wifi script="$PLUGIN_DIR/wifi.sh" icon.padding_right=0 label.padding_left=0 label.font="SF Pro:Italic:12.0" label.y_offset=-3 \
+    click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
+    popup.background.color=$BACKGROUND \
+    popup.background.border_width=2 \
+    popup.background.border_color=$TEXT_GREY \
+    popup.background.corner_radius=10 \
+    popup.y_offset=5 \
   --subscribe wifi wifi_change \
+  \
+  --add item wifi.priv.addr popup.wifi \
+  --set wifi.priv.addr icon="󰌗" \
+  \
+  --add item wifi.pub.addr popup.wifi \
+  --set wifi.pub.addr icon="󰖟" \
   \
   --add item swap e \
   --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh"\
-  icon="" \
-  label.font="Hack Nerd Font:Italic:13.0" \
-  background.color=$BACKGROUND \
-  background.corner_radius=10 \
-  background.drawing=on \
-  background.height=30 \
-  icon.padding_left=8 \
-  label.padding_right=8
+    icon="" \
+    label.font="Hack Nerd Font:Italic:13.0" \
+    background.color=$BACKGROUND \
+    background.corner_radius=10 \
+    background.drawing=on \
+    background.height=30 \
+    icon.padding_left=8 \
+    label.padding_right=8
 
 
 #### Groups !!! ####
