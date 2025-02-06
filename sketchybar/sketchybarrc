@@ -146,7 +146,8 @@ sketchybar --add item clock right \
     background.drawing=on \
     background.height=30 \
     icon.padding_left=8 \
-    label.padding_right=8
+    label.padding_right=8 \
+    click_script="open -a 'Activity Monitor'"
 
 
 #### Groups !!! ####
