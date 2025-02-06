@@ -7,3 +7,5 @@ font-family = ComicShannsMono Nerd Font
 font-size = 18
 
 macos-titlebar-style = hidden
+
+keybind = global:ctrl+p=toggle_quick_terminal
