@@ -36,7 +36,7 @@ default=(
 sketchybar --default "${default[@]}"
 
 
-sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=-18 
+sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=-18
 
 
 ##### Adding aeropsace layouts #####
@@ -148,7 +148,6 @@ sketchybar --add item clock right \
     icon.padding_left=8 \
     label.padding_right=8 \
     click_script="open -a 'Activity Monitor'"
-
 
 #### Groups !!! ####
 sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight \

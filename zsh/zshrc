@@ -109,6 +109,9 @@ function ij() {
   open -a "/Applications/IntelliJ IDEA CE.app/Contents/MacOS/idea" "$1"
 }
 alias gi="cp $HOME/.config/templateGitIgnore.txt ./.gitignore"
+alias gg="git log --oneline --graph --color --all --decorate"
+alias ta="terraform apply -auto-approve"
+alias gms="git merge --squash"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -137,3 +140,6 @@ alias gi="cp $HOME/.config/templateGitIgnore.txt ./.gitignore"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
