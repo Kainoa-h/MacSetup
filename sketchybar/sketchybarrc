@@ -35,9 +35,7 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-
 sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=-18
-
 
 ##### Adding aeropsace layouts #####
 # Add the aerospace_workspace_change event we specified in aerospace.toml
@@ -110,7 +108,6 @@ sketchybar --add item space_separator q \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-
 sketchybar --add item clock right \
   --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
   \
@@ -124,11 +121,11 @@ sketchybar --add item clock right \
   \
   --add item wifi right \
   --set wifi script="$PLUGIN_DIR/wifi.sh" label.font="SF Pro:Italic:12.0" label.y_offset=-3 \
-    popup.background.color=$BACKGROUND \
-    popup.background.border_width=2 \
-    popup.background.border_color=$TEXT_GREY \
-    popup.background.corner_radius=10 \
-    popup.y_offset=5 \
+  popup.background.color=$BACKGROUND \
+  popup.background.border_width=2 \
+  popup.background.border_color=$TEXT_GREY \
+  popup.background.corner_radius=10 \
+  popup.y_offset=5 \
   --subscribe wifi wifi_change mouse.entered mouse.exited \
   \
   --add item wifi.priv.addr popup.wifi \
@@ -138,27 +135,32 @@ sketchybar --add item clock right \
   --set wifi.pub.addr icon="󰖟" \
   \
   --add item swap e \
-  --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh"\
-    icon="" \
-    label.font="Hack Nerd Font:Italic:13.0" \
-    background.color=$BACKGROUND \
-    background.corner_radius=10 \
-    background.drawing=on \
-    background.height=30 \
-    icon.padding_left=8 \
-    label.padding_right=8 \
-    click_script="open -a 'Activity Monitor'"
+  --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh" \
+  icon="" \
+  label.font="Hack Nerd Font:Italic:13.0" \
+  icon.padding_left=8 \
+  label.padding_right=8 \
+  click_script="open -a 'Activity Monitor'" \
+  \
+  --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0
 
 #### Groups !!! ####
 sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight \
   --set spaces background.color=$BACKGROUND \
   background.corner_radius=10 \
-  background.height=30 \
+  background.height=30
+
+sketchybar --add bracket statsDisplay swap Stats \
+  --set statsDisplay \
+  background.color=$TEXT_GREY \
+  background.corner_radius=10 \
+  background.drawing=on \
+  background.height=30
 
 sketchybar --add bracket rightItems clock volume battery wifi \
   --set rightItems background.color=$BACKGROUND \
   background.corner_radius=10 \
-  background.height=30 \
+  background.height=30
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

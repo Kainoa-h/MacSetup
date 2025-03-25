@@ -112,6 +112,7 @@ alias gi="cp $HOME/.config/templateGitIgnore.txt ./.gitignore"
 alias gg="git log --oneline --graph --color --all --decorate"
 alias ta="terraform apply -auto-approve"
 alias gms="git merge --squash"
+alias glog="git log --name-status"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
