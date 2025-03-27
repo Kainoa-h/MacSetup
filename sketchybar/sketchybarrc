@@ -152,10 +152,10 @@ sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight
 
 sketchybar --add bracket statsDisplay swap Stats \
   --set statsDisplay \
-  background.color=$TEXT_GREY \
+  background.color=$BACKGROUND_DARK \
   background.corner_radius=10 \
   background.drawing=on \
-  background.height=30
+  background.height=30 #$TEXT_GREY \
 
 sketchybar --add bracket rightItems clock volume battery wifi \
   --set rightItems background.color=$BACKGROUND \
