@@ -142,7 +142,7 @@ sketchybar --add item clock right \
   label.padding_right=8 \
   click_script="open -a 'Activity Monitor'" \
   \
-  --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0
+  --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0 alias.update_freq=3
 
 #### Groups !!! ####
 sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight \

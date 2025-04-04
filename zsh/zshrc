@@ -113,6 +113,7 @@ alias gg="git log --oneline --graph --color --all --decorate"
 alias ta="terraform apply -auto-approve"
 alias gms="git merge --squash"
 alias glog="git log --name-status"
+alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
