@@ -1,0 +1,23 @@
+(defsrc
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  caps
+  fn  lctl lalt lmet
+)
+
+;; Definine two aliases, one for esc/control to other for function key
+(defalias
+  escctrl (tap-hold 120 120 esc lctl)
+  fnc (tap-hold-press 200 200 fn (layer-toggle fn))
+)
+
+(deflayer default
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  @escctrl
+  @fnc lctl lmet lalt
+)
+
+(deflayer fn
+  brdn  brup  _    _    _    _   prev  pp  next  mute  vold  volu
+  @escctrl
+  @fnc  lctl lmet lalt
+)
