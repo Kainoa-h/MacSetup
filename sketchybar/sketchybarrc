@@ -110,6 +110,10 @@ sketchybar --add item space_separator q \
 
 sketchybar --add item clock right \
   --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
+  icon.padding_left=0 \
+  label.color=$TEXT_WHITE \
+  label.font="alarm clock:Regular:18.0" \
+  label.padding_right=8 \
   \
   --add item volume right \
   --set volume script="$PLUGIN_DIR/volume.sh" \
@@ -126,6 +130,8 @@ sketchybar --add item clock right \
   popup.background.border_color=$TEXT_GREY \
   popup.background.corner_radius=10 \
   popup.y_offset=5 \
+  label.max_chars=8 \
+  scroll_texts=true \
   --subscribe wifi wifi_change mouse.entered mouse.exited \
   \
   --add item wifi.priv.addr popup.wifi \
@@ -142,7 +148,19 @@ sketchybar --add item clock right \
   label.padding_right=8 \
   click_script="open -a 'Activity Monitor'" \
   \
-  --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0 alias.update_freq=3
+  --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0 alias.update_freq=3 \
+  \
+  --add item ncspot e \
+  --set ncspot update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
+  icon="" \
+  background.corner_radius=10 \
+  background.color=$BACKGROUND_DARK \
+  background.height=30 \
+  label.font="Comic Sans Ms:Regular:13.0" \
+  label.color=$TEXT_WHITE \
+  label.max_chars=15 \
+  scroll_texts=true \
+  click_script="tmux send-keys -t spot 'P'"
 
 #### Groups !!! ####
 sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight \
@@ -157,8 +175,13 @@ sketchybar --add bracket statsDisplay swap Stats \
   background.drawing=on \
   background.height=30 #$TEXT_GREY \
 
-sketchybar --add bracket rightItems clock volume battery wifi \
+sketchybar --add bracket rightItems volume battery wifi \
   --set rightItems background.color=$BACKGROUND \
+  background.corner_radius=10 \
+  background.height=30
+
+sketchybar --add bracket calander clock \
+  --set clock background.color=$BACKGROUND_DARK \
   background.corner_radius=10 \
   background.height=30
 

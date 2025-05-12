@@ -78,13 +78,14 @@ gh
 zoxide
 brew
 docker
-dotnet
 encode64
 vscode
 history
 macos
 thefuck
-python
+aliases
+alias-finder
+gitignore
 )
 eval $(thefuck --alias)
 source $ZSH/oh-my-zsh.sh
@@ -106,16 +107,14 @@ alias kan="sudo ~/Applications/kanata_macos_arm64 --cfg ~/.config/kanata/kanata_
 alias kan-e="sudo ~/Applications/kanata_macos_arm64 --cfg ~/.config/kanata/kanata_caps2esc-external.kbd > /dev/null"
 alias y="yazi"
 alias cd="z"
-function ij() {
-  open -a "/Applications/IntelliJ IDEA CE.app/Contents/MacOS/idea" "$1"
-}
 alias gi="cp $HOME/.config/templateGitIgnore.txt ./.gitignore"
 alias gg="git log --oneline --graph --color --all --decorate"
 alias ta="terraform apply -auto-approve"
 alias gms="git merge --squash"
 alias glog="git log --name-status"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-# User configuration
+alias s="tmux a -t spot || tmux new-session -s spot 'ncspot'"
+alias sp="tmux send-keys -t spot 'P'"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
