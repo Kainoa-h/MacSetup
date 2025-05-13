@@ -5,7 +5,7 @@
 (defsrc
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
   w e
-  caps a s d f j k l ;
+  a s d f j k l ;
   fn  lctl lalt lmet
 )
 
@@ -15,7 +15,6 @@
 )
 
 (defalias
-  escctrl (tap-hold 120 120 esc lctl)
   chw (chord escape w)
   che (chord escape e)
   a (tap-hold $tap-time $hold-time a lsft)
@@ -32,7 +31,7 @@
 (deflayer default
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
   @chw @che
-  @escctrl @a @s @d @f @j @k @l @;
+  @a @s @d @f @j @k @l @;
   @fnc • • •
 )
 
@@ -45,6 +44,6 @@
 (deflayer fn
   brdn  brup  _    _    _    _   prev  pp  next  mute  vold  volu
   w e
-  @escctrl _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _
   @fnc  lctl lmet lalt
 )
