@@ -1,23 +1,39 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
 (defsrc
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
-  caps
+  caps a s d f j k l ;
   fn  lctl lalt lmet
 )
 
-;; Definine two aliases, one for esc/control to other for function key
+(defvar
+  tap-time 150
+  hold-time 200
+)
+
 (defalias
   escctrl (tap-hold 120 120 esc lctl)
+  a (tap-hold $tap-time $hold-time a lsft)
+  s (tap-hold $tap-time $hold-time s lctl)
+  d (tap-hold $tap-time $hold-time d lalt)
+  f (tap-hold $tap-time $hold-time f lmet)
+  j (tap-hold $tap-time $hold-time j rmet)
+  k (tap-hold $tap-time $hold-time k ralt)
+  l (tap-hold $tap-time $hold-time l rctl)
+  ; (tap-hold $tap-time $hold-time ; rsft)
   fnc (tap-hold-press 200 200 fn (layer-toggle fn))
 )
 
 (deflayer default
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
-  @escctrl
-  @fnc lctl lmet lalt
+  @escctrl @a @s @d @f @j @k @l @;
+  @fnc • • •
 )
 
 (deflayer fn
   brdn  brup  _    _    _    _   prev  pp  next  mute  vold  volu
-  @escctrl
+  @escctrl _ _ _ _ _ _ _ _
   @fnc  lctl lmet lalt
 )
