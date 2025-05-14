@@ -3,36 +3,36 @@
 )
 
 (defsrc
-  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
-  w e
-  a s d f j k l ;
-  fn  lctl lalt lmet
-)
-
-(defvar
-  tap-time 150
-  hold-time 200
+  f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
 )
 
 (defalias
   chw (chord escape w)
   che (chord escape e)
-  a (tap-hold $tap-time $hold-time a lsft)
-  s (tap-hold $tap-time $hold-time s lctl)
-  d (tap-hold $tap-time $hold-time d lalt)
-  f (tap-hold $tap-time $hold-time f lmet)
-  j (tap-hold $tap-time $hold-time j rmet)
-  k (tap-hold $tap-time $hold-time k ralt)
-  l (tap-hold $tap-time $hold-time l rctl)
-  ; (tap-hold $tap-time $hold-time ; rsft)
-  fnc (tap-hold-press 200 200 fn (layer-toggle fn))
 )
 
-(deflayer default
-  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
-  @chw @che
-  @a @s @d @f @j @k @l @;
-  @fnc • • •
+(deftemplate charmod (char mod)
+  (switch
+    ((key-timing 3 less-than 250)) $char break
+    () (tap-hold-release-timeout 80 500 $char $mod $char) break
+  )
+)
+
+(deflayermap (main)
+  w @chw
+  e @che
+  a (t! charmod a lsft)
+  s (t! charmod s lctl)
+  d (t! charmod d lalt)
+  f (t! charmod f lmet)
+  j (t! charmod j rmet)
+  k (t! charmod k ralt)
+  l (t! charmod l rctl)
+  ; (t! charmod ; rsft)
+  lmet •
+  lctl •
+  lalt •
+  fn (layer-toggle fn)
 )
 
 (defchords escape 30
@@ -42,8 +42,5 @@
 )
 
 (deflayer fn
-  brdn  brup  _    _    _    _   prev  pp  next  mute  vold  volu
-  w e
-  _ _ _ _ _ _ _ _
-  @fnc  lctl lmet lalt
+  brdn brup _ _ _ _ prev pp next mute vold volu
 )

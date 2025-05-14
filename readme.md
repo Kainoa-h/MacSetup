@@ -1,7 +1,8 @@
 # Personal MacOS configs & dotfiles
 ![desktop screenshot](image.png)
 ## Kanata | [./kanata](./kanata) | [link 2 project](https://github.com/jtroo/kanata)
-Inspired from [this](https://github.com/dreamsofcode-io/home-row-mods)
+Inspired by [this](https://github.com/dreamsofcode-io/home-row-mods)
+with recommendations from [this](https://github.com/jtroo/kanata/discussions/1455#discussion-7766783)
  - (w e) key chord for esc
  - [Home row mods](https://precondition.github.io/home-row-mods#what-are-home-row-mods)
 
