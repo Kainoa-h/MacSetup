@@ -103,8 +103,7 @@ function lazygit() {
     git commit -a -m "$1"
     git push
 }
-alias kan="sudo ~/Applications/kanata_macos_arm64 --cfg ~/.config/kanata/kanata_caps2esc.kbd > /dev/null"
-alias kan-e="sudo ~/Applications/kanata_macos_arm64 --cfg ~/.config/kanata/kanata_caps2esc-external.kbd > /dev/null"
+alias kan="sudo ~/Applications/kanata_macos_arm64 --cfg ~/.config/kanata/kanata_mod.kbd > /dev/null"
 alias y="yazi"
 alias cd="z"
 alias gi="cp $HOME/.config/templateGitIgnore.txt ./.gitignore"
