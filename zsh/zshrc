@@ -115,6 +115,7 @@ alias glog="git log --name-status"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias s="tmux a -t spot || tmux new-session -s spot 'ncspot'"
 alias sp="tmux send-keys -t spot 'P'"
+alias skbr="sketchybar --reload"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

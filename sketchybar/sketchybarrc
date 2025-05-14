@@ -113,7 +113,7 @@ sketchybar --add item clock right \
   icon.padding_left=0 \
   label.color=$TEXT_WHITE \
   label.font="alarm clock:Regular:18.0" \
-  label.padding_right=8 \
+  label.padding_right=20 \
   \
   --add item volume right \
   --set volume script="$PLUGIN_DIR/volume.sh" \
