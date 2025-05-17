@@ -7,8 +7,8 @@
 (defalias
   chw (chord escape w)
   che (chord escape e)
-  chi (chord backspace i)
   cho (chord backspace o)
+  chp (chord backspace p)
   chj (chord enter j)
   chk (chord enter k)
   chl (chord enter l)
@@ -25,8 +25,8 @@
 (deflayermap (main)
   w @chw
   e @che
-  i @chi
   o @cho
+  p @chp
   a (t! charmod a lsft)
   s (t! charmod s lctl)
   d (t! charmod d lalt)
@@ -66,9 +66,9 @@
 )
 
 (defchords backspace 30
-  (i  ) i
-  (  o) o
-  (i o) bspc
+  (o  ) o
+  (  p) p
+  (o p) bspc
 )
 
 (defchords enter 30
