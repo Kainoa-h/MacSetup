@@ -17,5 +17,12 @@
   "inactive_opacity": 0.5,
   "autosave": "on_focus_change",
   "auto_fold_dirs": false,
-  "formatter": "language_server"
+  "formatter": "language_server",
+  "languages": {
+    "HTML": {
+      "language_servers": [
+        "vscode-html-languageservice"
+      ]
+    }
+  }
 }

@@ -98,7 +98,7 @@ alias cb="pbcopy"
 alias v="nvim"
 alias rm="trash"
 alias zela="zellij a"
-function lazygit() {
+function instagit() {
     git add .
     git commit -a -m "$1"
     git push

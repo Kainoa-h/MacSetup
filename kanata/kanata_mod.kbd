@@ -11,7 +11,6 @@
   chp (chord backspace p)
   chj (chord enter j)
   chk (chord enter k)
-  chl (chord enter l)
 )
 
 (deftemplate charmod (char mod)
@@ -33,7 +32,7 @@
   f (t! charmod f lmet)
   j (t! charmod_slow @chj rmet)
   k (t! charmod_slow @chk ralt)
-  l (t! charmod_slow @chl rctl)
+  l (t! charmod l rctl)
   ; (t! charmod ; rsft)
   lmet (layer-while-held move_stuff)
   lctl (layer-while-held move_stuff)
@@ -41,6 +40,10 @@
 )
 
 (deflayermap (move_stuff)
+  i bspc
+  o bspc
+  m ret
+  n ret
   a (t! charmod a lsft)
   s (t! charmod s lctl)
   d (t! charmod d lalt)
@@ -68,12 +71,11 @@
 (defchords backspace 30
   (o  ) o
   (  p) p
-  (o p) bspc
+  (o p) A-bspc
 )
 
 (defchords enter 30
-  (j    ) j
-  (  k  ) k
-  (    l) l
-  (j k l) ret
+  (j  ) j
+  (  k) k
+  (j k) ret
 )
