@@ -37,6 +37,7 @@
   lmet (layer-while-held move_stuff)
   lctl (layer-while-held move_stuff)
   lalt (layer-while-held move_stuff)
+  rmet (layer-while-held move_stuff)
 )
 
 (deflayermap (move_stuff)
