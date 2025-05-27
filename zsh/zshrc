@@ -86,12 +86,14 @@ thefuck
 aliases
 alias-finder
 gitignore
+tmux
 )
 eval $(thefuck --alias)
 source $ZSH/oh-my-zsh.sh
 
 # Kai's Aliases
-alias ll="ls -al"
+alias ll="eza -laBhHF"
+alias lg="eza -laBhHF --git-repos --git --no-permissions"
 alias config="v $HOME/.config/zsh/zshrc"
 alias cb="pbcopy"
 # alias split="split_tab"
@@ -108,7 +110,7 @@ alias y="yazi"
 alias cd="z"
 alias gi="cp $HOME/.config/templateGitIgnore.txt ./.gitignore"
 alias gg="git log --oneline --graph --color --all --decorate"
-alias ta="terraform apply -auto-approve"
+alias terra-a="terraform apply -auto-approve"
 alias gms="git merge --squash"
 alias glog="git log --name-status"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"

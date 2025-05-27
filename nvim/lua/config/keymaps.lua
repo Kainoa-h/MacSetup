@@ -15,6 +15,9 @@ vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 local tele_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ds", tele_builtin.lsp_document_symbols, { desc = "Document Symbols" })
 
+require("no-neck-pain")
+vim.keymap.set("n", "<leader>bg", ":NoNeckPain<CR>")
+
 require("worktrees").setup()
 vim.keymap.set("n", "<leader>gw", function()
   Snacks.picker.worktrees()
