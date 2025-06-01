@@ -2,5 +2,6 @@
 require("config.lazy")
 
 -- require("catppuccin").load("latte")
-vim.o.background = "light"
-vim.cmd([[colorscheme gruvbox]])
+-- vim.o.background = "light"
+-- vim.cmd([[colorscheme gruvbox]])
+vim.cmd("colorscheme dawnfox")
