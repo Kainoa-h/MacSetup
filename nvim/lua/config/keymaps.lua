@@ -14,6 +14,12 @@ vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
 local tele_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ds", tele_builtin.lsp_document_symbols, { desc = "Document Symbols" })
+vim.keymap.set("n", "<leader>fa", function()
+  require("telescope.builtin").live_grep({
+    cwd = require("lazyvim.util").root.get(), -- this ensures it uses the project root
+  })
+end, { desc = "Grep from project root" })
+vim.keymap.set("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Fuzzy find in buffer" })
 
 require("no-neck-pain")
 vim.keymap.set("n", "<leader>bg", ":NoNeckPain<CR>")
