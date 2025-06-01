@@ -12,7 +12,7 @@ source "$PLUGIN_DIR/colors.sh"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=37 color=$TRANSPARENT
+sketchybar --bar position=top height=37 color="$TRANSPARENT"
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -24,8 +24,8 @@ default=(
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="SF Pro:Semibold:17.0"
-  icon.color=$TEXT_GREY
-  label.color=$TEXT_GREY
+  icon.color="$TEXT_GREY"
+  label.color="$TEXT_GREY"
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
@@ -111,7 +111,7 @@ sketchybar --add item space_separator q \
 sketchybar --add item clock right \
   --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
   icon.padding_left=0 \
-  label.color=$TEXT_WHITE \
+  label.color="$TEXT_WHITE" \
   label.font="alarm clock:Regular:18.0" \
   label.padding_right=20 \
   \
@@ -125,9 +125,9 @@ sketchybar --add item clock right \
   \
   --add item wifi right \
   --set wifi script="$PLUGIN_DIR/wifi.sh" label.font="SF Pro:Italic:12.0" label.y_offset=-3 \
-  popup.background.color=$BACKGROUND \
+  popup.background.color="$BACKGROUND" \
   popup.background.border_width=2 \
-  popup.background.border_color=$TEXT_GREY \
+  popup.background.border_color="$TEXT_GREY" \
   popup.background.corner_radius=10 \
   popup.y_offset=5 \
   label.max_chars=8 \
@@ -154,34 +154,50 @@ sketchybar --add item clock right \
   --set ncspot update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
   icon="" \
   background.corner_radius=10 \
-  background.color=$BACKGROUND_DARK \
+  background.color="$BACKGROUND_DARK" \
   background.height=30 \
   label.font="Comic Sans Ms:Regular:13.0" \
-  label.color=$TEXT_WHITE \
+  label.color="$TEXT_WHITE" \
   label.max_chars=15 \
   scroll_texts=true \
-  click_script="tmux send-keys -t spot 'P'"
+  click_script="tmux send-keys -t spot 'P'" \
+  \
+  --add item day e \
+  --set day label.max_chars=20 \
+  icon.padding_left=2 \
+  icon.padding_right=0 \
+  icon.font="sketchybar-app-font:Regular:16.0" \
+  icon=":obsidian:" \
+  label.padding_left=2 \
+  label.padding_right=2 \
+  background.corner_radius=10 \
+  background.color="$BACKGROUND" \
+  background.height=30 \
+  label.font="Comic Sans Ms:Regular:13.0" \
+  label.color="$TEXT_GREY" \
+  scroll_texts=true \
+  drawing=off
 
 #### Groups !!! ####
 sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight \
-  --set spaces background.color=$BACKGROUND \
+  --set spaces background.color="$BACKGROUND" \
   background.corner_radius=10 \
   background.height=30
 
 sketchybar --add bracket statsDisplay swap Stats \
   --set statsDisplay \
-  background.color=$BACKGROUND_DARK \
+  background.color="$BACKGROUND_DARK" \
   background.corner_radius=10 \
   background.drawing=on \
   background.height=30 #$TEXT_GREY \
 
 sketchybar --add bracket rightItems volume battery wifi \
-  --set rightItems background.color=$BACKGROUND \
+  --set rightItems background.color="$BACKGROUND" \
   background.corner_radius=10 \
   background.height=30
 
 sketchybar --add bracket calander clock \
-  --set clock background.color=$BACKGROUND_DARK \
+  --set clock background.color="$BACKGROUND_DARK" \
   background.corner_radius=10 \
   background.height=30
 

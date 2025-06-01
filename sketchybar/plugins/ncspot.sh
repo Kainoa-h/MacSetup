@@ -1,8 +1,7 @@
-#!/bin/sh
-source "$CONFIG_DIR/plugins/colors.sh"
+#!/bin/bash
+source "$PLUGIN_DIR/colors.sh"
 
-JSON="$(nc -U /tmp/ncspot-501/ncspot.sock < /dev/null 2>/dev/null)"
-SPOTIFY_GREEN="0xFF1DB954"
+JSON="$(nc -U /tmp/ncspot-501/ncspot.sock </dev/null 2>/dev/null)"
 
 # Check if the JSON is empty
 if [ -z "$JSON" ]; then
@@ -20,4 +19,4 @@ if [ "$STATUS" = "null" ]; then
 fi
 
 TITLE="$(echo "$JSON" | jq -r '.playable.title')"
-sketchybar --set ncspot label="$TITLE" icon.color="$SPOTIFY_GREEN"
+sketchybar --set ncspot label="$TITLE" icon.color="$TEXT_SPOTIFY_GREEN"
