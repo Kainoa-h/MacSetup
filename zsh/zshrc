@@ -87,6 +87,7 @@ aliases
 alias-finder
 gitignore
 tmux
+globalias
 )
 eval $(thefuck --alias)
 source $ZSH/oh-my-zsh.sh
@@ -94,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # Kai's Aliases
 alias ll="eza -laBhHF"
 alias lg="eza -laBhHF --git-repos --git --no-permissions"
-alias config="v $HOME/.config/zsh/zshrc"
+alias config="v $HOME/.config"
 alias cb="pbcopy"
 # alias split="split_tab"
 alias v="nvim"
