@@ -151,7 +151,7 @@ sketchybar --add item clock right \
   --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0 alias.update_freq=3 \
   \
   --add item ncspot e \
-  --set ncspot update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
+  --set ncspot updates=when_shown update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
   icon="" \
   background.corner_radius=10 \
   background.color="$BACKGROUND_DARK" \
