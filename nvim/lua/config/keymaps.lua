@@ -12,7 +12,6 @@ vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
-local tele_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>fa", function()
   require("telescope.builtin").live_grep({
     cwd = require("lazyvim.util").root.get(), -- this ensures it uses the project root
@@ -26,4 +25,14 @@ vim.keymap.set("n", "<leader>bg", ":NoNeckPain<CR>")
 require("worktrees").setup()
 vim.keymap.set("n", "<leader>gw", function()
   Snacks.picker.worktrees()
-end)
+end, { desc = "Switch Worktree" })
+
+vim.keymap.set("n", "<F5>", function()
+  require("dap").continue()
+end, { desc = "Start/Continue" })
+vim.keymap.set("n", "<F10>", function()
+  require("dap").step_over()
+end, { desc = "Step Over" })
+vim.keymap.set("n", "<F11>", function()
+  require("dap").step_into()
+end, { desc = "Step Over" })
