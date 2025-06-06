@@ -1,6 +1,6 @@
 " Single obsidian vimrc setup to be symlinked
-nmap j zj
-nmap k zk
+" nmap j zj
+" nmap k zk
 
 set clipboard=unnamed
 
