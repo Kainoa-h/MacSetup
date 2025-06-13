@@ -140,15 +140,11 @@ sketchybar --add item clock right \
   --add item wifi.pub.addr popup.wifi \
   --set wifi.pub.addr icon="󰖟" \
   \
-  --add item swap e \
-  --set swap update_freq=20 script="$PLUGIN_DIR/memswap.sh" \
-  icon="" \
-  label.font="Hack Nerd Font:Italic:13.0" \
-  icon.padding_left=8 \
-  label.padding_right=8 \
-  click_script="open -a 'Activity Monitor'" \
-  \
   --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0 alias.update_freq=3 \
+  background.color="$BACKGROUND_DARK" \
+  background.corner_radius=10 \
+  background.drawing=on \
+  background.height=30 \
   \
   --add item ncspot e \
   --set ncspot updates=when_shown update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
@@ -183,13 +179,6 @@ sketchybar --add bracket spaces '/space\..*/' spacePaddingLeft spacePaddingRight
   --set spaces background.color="$BACKGROUND" \
   background.corner_radius=10 \
   background.height=30
-
-sketchybar --add bracket statsDisplay swap Stats \
-  --set statsDisplay \
-  background.color="$BACKGROUND_DARK" \
-  background.corner_radius=10 \
-  background.drawing=on \
-  background.height=30 #$TEXT_GREY \
 
 sketchybar --add bracket rightItems volume battery wifi \
   --set rightItems background.color="$BACKGROUND" \
