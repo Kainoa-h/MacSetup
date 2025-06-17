@@ -40,13 +40,17 @@ sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=
 ##### Adding aeropsace layouts #####
 # Add the aerospace_workspace_change event we specified in aerospace.toml
 sketchybar --add event aerospace_workspace_change
+sketchybar --add event aerospace_monitor_change
 
 # This only works for single monitor configs!
-for sid in $(aerospace list-workspaces --monitor 1); do
-  #for sid in "${SPACE_IDS[@]}"; do
+for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
-    --subscribe space.$sid aerospace_workspace_change \
+    --subscribe space.$sid \
     --set space.$sid \
+    display="$(
+      v=$(aerospace list-windows --workspace "$sid" --format "%{monitor-appkit-nsscreen-screens-id}" | cut -c1)
+      echo "${v:-1}"
+    )" \
     drawing=off \
     background.corner_radius=5 \
     background.drawing=on \
@@ -62,26 +66,30 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     label.padding_left=0 \
     label.y_offset=-1 \
     label.shadow.drawing=off \
-    click_script="aerospace workspace $sid" \
-    script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+    click_script="aerospace workspace $sid"
 done
 
 # Load Icons on startup
-for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
-  apps=$(aerospace list-windows --workspace "$sid" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+for mid in $(aerospace list-monitors | cut -c1); do
+  for sid in $(aerospace list-workspaces --monitor $mid --empty no); do
+    apps=$(aerospace list-windows --workspace "$sid" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
-  sketchybar --set space.$sid drawing=on
+    sketchybar --set space.$sid drawing=on
 
-  icon_strip=" "
-  if [ "${apps}" != "" ]; then
-    while read -r app; do
-      icon_strip+=" $($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
-    done <<<"${apps}"
-  else
-    icon_strip=""
-  fi
-  sketchybar --set space.$sid label="$icon_strip"
+    icon_strip=" "
+    if [ "${apps}" != "" ]; then
+      while read -r app; do
+        icon_strip+=" $($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
+      done <<<"${apps}"
+    else
+      icon_strip=""
+    fi
+    sketchybar --set space.$sid label="$icon_strip"
+  done
 done
+
+# Set color for currently focused space
+sketchybar --set space."$(aerospace list-workspaces --focused)" background.color=$HIGHLIGHT_BACKGROUND label.color=$TEXT_WHITE icon.color=$TEXT_WHITE background.border_color=$TEXT_GREY
 
 sketchybar --add item spacePaddingRight left --set spacePaddingRight padding_left=-18
 
@@ -95,7 +103,7 @@ sketchybar --add item space_separator q \
   label.margin_left=0 \
   background.drawing=off \
   script="$PLUGIN_DIR/space_windows.sh" \
-  --subscribe space_separator aerospace_workspace_change space_windows_change front_app_switched
+  --subscribe space_separator aerospace_workspace_change space_windows_change front_app_switched aerospace_monitor_change
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
