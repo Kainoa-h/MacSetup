@@ -2,6 +2,7 @@
 
 # make sure it's executable with:
 # chmod +x ~/.config/sketchybar/plugins/aerospace.sh
+#WARN: Unused
 source "$CONFIG_DIR/plugins/colors.sh"
 
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
@@ -9,10 +10,3 @@ if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
 else
   sketchybar --set $NAME background.color=$TRANSPARENT label.color=$TEXT_GREY icon.color=$TEXT_GREY background.border_color=$TEXT_WHITE
 fi
-
-if [ "$SENDER" = "aerospace_monitor_change" ]; then
-  sketchybar --set space.$1 display "$TARGET_MONITOR"
-fi
-
-echo "$SENDER: $1 - $FOCUSED_WORKSPACE - $TARGET_MONITOR" >>~/Desktop/space.txt
-

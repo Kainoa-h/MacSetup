@@ -37,7 +37,7 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=-18
 
-##### Adding aeropsace layouts #####
+##### Adding aerospace layouts #####
 # Add the aerospace_workspace_change event we specified in aerospace.toml
 sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_monitor_change
@@ -45,7 +45,6 @@ sketchybar --add event aerospace_monitor_change
 # This only works for single monitor configs!
 for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
-    --subscribe space.$sid \
     --set space.$sid \
     display="$(
       v=$(aerospace list-windows --workspace "$sid" --format "%{monitor-appkit-nsscreen-screens-id}" | cut -c1)
