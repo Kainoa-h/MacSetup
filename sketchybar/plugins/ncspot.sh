@@ -9,6 +9,12 @@ if [ -z "$JSON" ]; then
   exit 0
 fi
 
+STATUS="$(echo "$JSON" | jq -r '.mode')"
+if [ "$STATUS" = "Stopped" ] || [ "$STATUS" = "FinishedTrack" ]; then
+  sketchybar --set ncspot drawing=on icon.color="$TEXT_GREY"
+  exit 0
+fi
+
 STATUS="$(echo "$JSON" | jq -r '.mode.Playing')"
 
 if [ "$STATUS" = "null" ]; then
