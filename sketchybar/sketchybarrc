@@ -42,7 +42,6 @@ sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=
 sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_monitor_change
 
-# This only works for single monitor configs!
 for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
     --set space.$sid \

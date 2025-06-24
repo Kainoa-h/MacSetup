@@ -17,7 +17,9 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
     done <<<"${prevapps}"
     sketchybar --set space.$PREV_WORKSPACE label="$icon_strip"
   else
-    sketchybar --set space.$PREV_WORKSPACE drawing=off
+    #WARN: this assumes monitor 1 is your main monitor
+    aerospace move-workspace-to-monitor --workspace "$PREV_WORKSPACE" 1
+    sketchybar --set space.$PREV_WORKSPACE drawing=off display=1
   fi
   #BUG: Potential bug in aerospace causing 'aerospace_workspace_change' to fire multiple times and cause desync due to possible race condition?
   # might just be my awful scripting
