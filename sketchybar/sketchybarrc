@@ -64,7 +64,7 @@ for sid in $(aerospace list-workspaces --all); do
     label.padding_left=0 \
     label.y_offset=-1 \
     label.shadow.drawing=off \
-    click_script="aerospace workspace $sid"
+    click_script="~/.config/aerospace/workspace_change.sh $sid"
 done
 
 # Load Icons on startup

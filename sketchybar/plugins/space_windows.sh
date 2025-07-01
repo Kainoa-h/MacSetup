@@ -21,13 +21,6 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
     aerospace move-workspace-to-monitor --workspace "$PREV_WORKSPACE" 1
     sketchybar --set space.$PREV_WORKSPACE drawing=off display=1
   fi
-  #BUG: Potential bug in aerospace causing 'aerospace_workspace_change' to fire multiple times and cause desync due to possible race condition?
-  # might just be my awful scripting
-  # for mid in $(aerospace list-monitors | cut -c1); do
-  #   for sid in $(aerospace list-workspaces --monitor $mid --empty no); do
-  #     sketchybar --set space.$sid background.color=$TRANSPARENT label.color=$TEXT_GREY icon.color=$TEXT_GREY background.border_color=$TEXT_WHITE
-  #   done
-  # done
   sketchybar --set space.$PREV_WORKSPACE background.color=$TRANSPARENT label.color=$TEXT_GREY icon.color=$TEXT_GREY background.border_color=$TEXT_WHITE
   sketchybar --set space.$FOCUSED_WORKSPACE background.color=$HIGHLIGHT_BACKGROUND label.color=$TEXT_WHITE icon.color=$TEXT_WHITE background.border_color=$TEXT_GREY
 else
