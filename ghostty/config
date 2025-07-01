@@ -9,3 +9,4 @@ font-size = 18
 macos-titlebar-style = hidden
 
 keybind = global:ctrl+p=toggle_quick_terminal
+keybind = super+s>super+s=text::w\n
