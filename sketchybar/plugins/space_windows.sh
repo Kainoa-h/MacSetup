@@ -1,16 +1,16 @@
 #!/bin/bash
 
-if [ "$SENDER" = "aerospace_monitor_change" ]; then
+if [[ "$SENDER" == "aerospace_monitor_change" ]]; then
   sketchybar --set space."$(aerospace list-workspaces --focused)" display="$TARGET_MONITOR"
   exit 0
 fi
 
 source "$CONFIG_DIR/plugins/colors.sh"
 
-if [ "$SENDER" = "aerospace_workspace_change" ]; then
+if [[ "$SENDER" == "aerospace_workspace_change" ]]; then
   prevapps=$(aerospace list-windows --workspace "$PREV_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
-  if [ "${prevapps}" != "" ]; then
-    sketchybar --set space.$PREV_WORKSPACE drawing=on
+  if [[ "${prevapps}" != "" ]]; then
+    sketchybar --set space."$PREV_WORKSPACE" drawing=on
     icon_strip=" "
     while read -r app; do
       icon_strip+=" $($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
@@ -28,7 +28,7 @@ else
 fi
 
 apps=$(aerospace list-windows --workspace "$FOCUSED_WORKSPACE" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
-sketchybar --set space.$FOCUSED_WORKSPACE drawing=on
+sketchybar --set space."$FOCUSED_WORKSPACE" drawing=on
 icon_strip=" "
 if [ "${apps}" != "" ]; then
   while read -r app; do

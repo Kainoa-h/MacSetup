@@ -1,4 +1,5 @@
 #!/bin/bash
+# BUG: the white boarders around each space doesn't render sometimes..
 
 # A simple sketchybar config for aerospace users to get started with
 # Not too different from the base starting config!
@@ -42,7 +43,12 @@ sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=
 sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_monitor_change
 
-for sid in $(aerospace list-workspaces --all); do
+# For some reaseon probs cause aerospace.toml workpace bindings have changed. the list-workspaces --all no longer lists ALL workspaces,
+# merely the ones in use, hence all workspaces have to be defined manually. This does give us the advantage of having hidden workspaces
+WORKSPACES=("1" "2" "3" "4" "5" "6" "7" "8" "9"
+  "A" "B" "C" "D" "E" "F" "G" "I" "M"
+  "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z")
+for sid in "${WORKSPACES[@]}"; do
   sketchybar --add item space.$sid left \
     --set space.$sid \
     display="$(
@@ -101,7 +107,7 @@ sketchybar --add item space_separator q \
   label.margin_left=0 \
   background.drawing=off \
   script="$PLUGIN_DIR/space_windows.sh" \
-  --subscribe space_separator aerospace_workspace_change space_windows_change front_app_switched aerospace_monitor_change
+  --subscribe space_separator aerospace_workspace_change space_windows_change aerospace_monitor_change
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
