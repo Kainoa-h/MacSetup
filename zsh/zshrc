@@ -7,6 +7,7 @@ eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 # Kai's Aliases
 source "$HOME/.config/zsh/git_alias.zsh"
+source "$HOME/.config/zsh/tmux_alias.zsh"
 alias zo="zoxide"
 alias ll="eza -laBhHF"
 alias lg="eza -laBhHF --git-repos --git --no-permissions"
