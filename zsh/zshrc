@@ -44,4 +44,9 @@ bindkey '^@' expand-all-aliases  # Ctrl-Space
 # autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-eval "$(starship init zsh)"
+# workaround for a bug that happens when startship is initialised multiple times
+# see: https://github.com/starship/starship/issues/3418#issuecomment-1711630970
+type starship_zle-keymap-select >/dev/null || \
+  {
+    eval "$(starship init zsh)"
+  }
