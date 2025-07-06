@@ -3,10 +3,12 @@ foreground = ffffff
 background-opacity = 0.7
 
 
-font-family = ComicShannsMono Nerd Font
+font-family = CaskaydiaCove NF
 font-size = 18
 
 macos-titlebar-style = hidden
 
 keybind = global:ctrl+p=toggle_quick_terminal
 keybind = super+s>super+s=text::w\n
+
+font-feature = +liga
