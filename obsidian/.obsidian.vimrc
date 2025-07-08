@@ -2,7 +2,7 @@
 " nmap j zj
 " nmap k zk
 nmap j gj
-nmap k g
+nmap k gk
 
 set clipboard=unnamed
 
