@@ -49,6 +49,12 @@ docker completion zsh > ~/.docker/completions/_docker
 FPATH="$HOME/.docker/completions:$FPATH"
 autoload -Uz compinit
 compinit
+
+# history plugin
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
