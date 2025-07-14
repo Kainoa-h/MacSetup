@@ -1,0 +1,9 @@
+alias dcxt="docker context use"
+alias dcu="docker compose up -d"
+alias dc="docker contest ls"
+alias dl="docker logs"
+alias dv="docker volume ls"
+alias di="docker image ls"
+alias dnuke='docker rm -f $(docker ps -q)'
+alias d="docker ps"
+alias da="docker ps -a"

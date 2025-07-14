@@ -123,6 +123,14 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 symbol = ""
 style = "bg:color_bg3"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+disabled = false
+only_with_files = true
+detect_files = [
+  "docker-compose.yml",
+  "docker-compose.yaml",
+  "Dockerfile",
+  "compose.yaml",
+]
 
 [conda]
 style = "bg:color_bg3"

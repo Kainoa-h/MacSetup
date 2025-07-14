@@ -8,6 +8,7 @@ eval "$(zoxide init zsh)"
 # Kai's Aliases
 source "$HOME/.config/zsh/git_alias.zsh"
 source "$HOME/.config/zsh/tmux_alias.zsh"
+source "$HOME/.config/zsh/docker_alias.zsh"
 alias zo="zoxide"
 alias ll="eza -laBhHF"
 alias lg="eza -laBhHF --git-repos --git --no-permissions"
@@ -42,6 +43,12 @@ expand-all-aliases() {
 zle -N expand-all-aliases
 bindkey '^@' expand-all-aliases  # Ctrl-Space
 
+# docker completions
+mkdir -p ~/.docker/completions
+docker completion zsh > ~/.docker/completions/_docker
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
 # autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
