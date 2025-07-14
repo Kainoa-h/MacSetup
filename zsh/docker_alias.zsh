@@ -1,4 +1,5 @@
 alias dcxt="docker context use"
+alias dcxtl="docker context ls"
 alias dcu="docker compose up -d"
 alias dc="docker context ls"
 alias dl="docker logs"
