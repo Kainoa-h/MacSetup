@@ -1,6 +1,6 @@
 alias dcxt="docker context use"
 alias dcu="docker compose up -d"
-alias dc="docker contest ls"
+alias dc="docker context ls"
 alias dl="docker logs"
 alias dv="docker volume ls"
 alias di="docker image ls"
