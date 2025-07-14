@@ -5,6 +5,12 @@ bindkey -v
 export EDITOR=nvim
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
+
+# tab highlight & completion
+autoload -Uz compinit
+compinit -C
+zstyle ':completion:*' menu select
+
 # Kai's Aliases
 source "$HOME/.config/zsh/git_alias.zsh"
 source "$HOME/.config/zsh/tmux_alias.zsh"
