@@ -29,6 +29,7 @@ alias y="yazi"
 alias cd="z"
 alias terra-a="terraform apply -auto-approve"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+#TODO: make this trigger skbr on reopen as well
 alias s="tmux a -t spot || tmux new-session -s spot '(sleep 5; sketchybar --set ncspot drawing=on) &; ncspot'"
 alias sp="tmux send-keys -t spot 'P'"
 alias skbr="sketchybar --reload"

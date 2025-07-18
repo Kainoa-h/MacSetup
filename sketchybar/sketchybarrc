@@ -151,12 +151,16 @@ sketchybar --add item clock right \
   \
   --add item wifi.pub.addr popup.wifi \
   --set wifi.pub.addr icon="󰖟" \
-  \
-  --add alias Stats e --set Stats label.padding_left=0 label.padding_right=0 icon.padding_left=0 icon.padding_right=0 alias.update_freq=3 \
-  background.color="$BACKGROUND_DARK" \
+  --add item swap e \
+  --set swap update_freq=60 script="$PLUGIN_DIR/memswap.sh" \
+  icon="" \
   background.corner_radius=10 \
-  background.drawing=on \
+  background.color="$BACKGROUND_DARK" \
   background.height=30 \
+  label.font="Hack Nerd Font:Italic:13.0" \
+  icon.padding_left=8 \
+  label.padding_right=8 \
+  click_script="open -a 'Activity Monitor'" \
   \
   --add item ncspot e \
   --set ncspot updates=when_shown update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
