@@ -43,12 +43,7 @@ sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=
 sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_monitor_change
 
-# For some reaseon probs cause aerospace.toml workpace bindings have changed. the list-workspaces --all no longer lists ALL workspaces,
-# merely the ones in use, hence all workspaces have to be defined manually. This does give us the advantage of having hidden workspaces
-WORKSPACES=("1" "2" "3" "4" "5" "6" "7" "8" "9"
-  "A" "B" "C" "D" "E" "F" "G" "I" "M"
-  "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z")
-for sid in "${WORKSPACES[@]}"; do
+for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
     --set space.$sid \
     display="$(
@@ -70,7 +65,7 @@ for sid in "${WORKSPACES[@]}"; do
     label.padding_left=0 \
     label.y_offset=-1 \
     label.shadow.drawing=off \
-    click_script="~/.config/aerospace/workspace_change.sh $sid"
+    click_script="aerospace workspace $sid"
 done
 
 # Load Icons on startup
@@ -107,7 +102,7 @@ sketchybar --add item space_separator q \
   label.margin_left=0 \
   background.drawing=off \
   script="$PLUGIN_DIR/space_windows.sh" \
-  --subscribe space_separator aerospace_workspace_change space_windows_change aerospace_monitor_change
+  --subscribe space_separator aerospace_workspace_change space_windows_change front_app_switched aerospace_monitor_change
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
