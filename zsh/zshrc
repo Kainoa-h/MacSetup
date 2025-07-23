@@ -40,7 +40,7 @@ expand-all-aliases() {
 
   # Check if it's an alias
   local expanded
-  expanded="$(alias "$last_word" 2>/dev/null | sed -E "s/^$last_word='(.*)'$/\1/")"
+  expanded="$(alias "$last_word" 2>/dev/null | cut -d'=' -f2 | sed "s/^'//; s/'$//")"
 
   if [[ -n "$expanded" ]]; then
     LBUFFER="${before_last}${expanded}"
