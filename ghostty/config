@@ -12,3 +12,5 @@ keybind = global:ctrl+p=toggle_quick_terminal
 keybind = super+s>super+s=text::w\n
 
 font-feature = +liga
+
+mouse-hide-while-typing = true
