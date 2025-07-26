@@ -12,6 +12,8 @@ vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true })
+
 vim.keymap.set("n", "<leader>fa", function()
   require("telescope.builtin").live_grep({
     cwd = require("lazyvim.util").root.get(), -- this ensures it uses the project root
