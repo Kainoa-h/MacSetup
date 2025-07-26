@@ -7,7 +7,6 @@
 Mostly default config
 
 - Added stuff to work with Sketchybar
-- Removed `alt+shift+f` as it confilcted with auto format keybind :p
 
 ## JankyBorders | [./borders](./borders) | [link 2 project](https://github.com/FelixKratz/JankyBorders)
 
