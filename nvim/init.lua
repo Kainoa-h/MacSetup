@@ -12,3 +12,9 @@ vim.cmd("colorscheme gruvbox-material")
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+require("project_nvim").setup({
+  manual_mode = false,
+  detection_methods = { "pattern" },
+  patterns = { ".git", "Makefile", "package.json" }, -- feel free to add more
+})
