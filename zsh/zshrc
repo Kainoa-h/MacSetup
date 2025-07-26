@@ -24,12 +24,18 @@ alias y="yazi"
 alias cd="z"
 alias terra-a="terraform apply -auto-approve"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-#TODO: make this trigger skbr on reopen as well
-alias s="tmux a -t spot || tmux new-session -s spot '(sleep 5; sketchybar --set ncspot drawing=on) &; ncspot'"
 alias sp="tmux send-keys -t spot 'P'"
 alias skbr="sketchybar --reload"
 
-expand-all-aliases() {
+s() {
+  if tmux has-session -t spot; then
+    (sleep 5; sketchybar --set ncspot drawing=on) &; tmux a -t spot
+  else
+    tmux new-session -s spot "(sleep 5; sketchybar --set ncspot drawing=on) &; ncspot"
+  fi
+}
+
+expand-all-aliases-n-functions() {
   local last_word="${LBUFFER##* }"
   local before_last="${LBUFFER%$last_word}"
   # Check if it's an alias
@@ -38,11 +44,19 @@ expand-all-aliases() {
 
   if [[ -n "$expanded" ]]; then
     LBUFFER="${before_last}${expanded}"
+    exit 0;
   fi
+
+  expanded="$(declare -f $last_word)"
+
+  if [[ -n "$expanded" ]]; then
+    echo "$expanded" | bat
+  fi
+ 
 }
 
-zle -N expand-all-aliases
-bindkey '^@' expand-all-aliases  # Ctrl-Space
+zle -N expand-all-aliases-n-functions
+bindkey '^@' expand-all-aliases-n-functions  # Ctrl-Space
 
 # docker completions
 # mkdir -p ~/.docker/completions
