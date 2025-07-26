@@ -6,11 +6,6 @@ export EDITOR=nvim
 eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 
-# tab highlight & completion
-autoload -Uz compinit
-compinit -C
-zstyle ':completion:*' menu select
-
 # Kai's Aliases
 source "$HOME/.config/zsh/git_alias.zsh"
 source "$HOME/.config/zsh/tmux_alias.zsh"
@@ -37,7 +32,6 @@ alias skbr="sketchybar --reload"
 expand-all-aliases() {
   local last_word="${LBUFFER##* }"
   local before_last="${LBUFFER%$last_word}"
-
   # Check if it's an alias
   local expanded
   expanded="$(alias "$last_word" 2>/dev/null | cut -d'=' -f2 | sed "s/^'//; s/'$//")"
@@ -51,11 +45,9 @@ zle -N expand-all-aliases
 bindkey '^@' expand-all-aliases  # Ctrl-Space
 
 # docker completions
-mkdir -p ~/.docker/completions
-docker completion zsh > ~/.docker/completions/_docker
+# mkdir -p ~/.docker/completions
+# docker completion zsh > ~/.docker/completions/_docker
 FPATH="$HOME/.docker/completions:$FPATH"
-autoload -Uz compinit
-compinit
 
 # history plugin
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -64,6 +56,11 @@ bindkey '^[[B' history-substring-search-down
 
 # autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# tab highlight & completion
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
 
 # workaround for a bug that happens when startship is initialised multiple times
 # see: https://github.com/starship/starship/issues/3418#issuecomment-1711630970
