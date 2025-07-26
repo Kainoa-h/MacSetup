@@ -26,6 +26,9 @@ alias terra-a="terraform apply -auto-approve"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias sp="tmux send-keys -t spot 'P'"
 alias skbr="sketchybar --reload"
+## kills whatsap cuz it fucking doesn't close properly with command+q
+alias kws="ps aux | grep WhatsApp.app/Contents/MacOS | awk '{print \$2}' | xargs kill -9"
+alias src="source ~/.zshrc"
 
 s() {
   if tmux has-session -t spot; then
