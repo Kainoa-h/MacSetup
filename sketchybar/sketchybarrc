@@ -1,6 +1,4 @@
 #!/bin/bash
-# BUG: the white boarders around each space doesn't render sometimes..
-
 # A simple sketchybar config for aerospace users to get started with
 # Not too different from the base starting config!
 PLUGIN_DIR="$CONFIG_DIR/plugins"
@@ -43,6 +41,7 @@ sketchybar --add item spacePaddingLeft left --set spacePaddingLeft padding_left=
 sketchybar --add event aerospace_workspace_change
 sketchybar --add event aerospace_monitor_change
 
+#BUG: p sure this means u gotta reload skbr when u plug a monitor in..?
 for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
     --set space.$sid \
@@ -54,6 +53,7 @@ for sid in $(aerospace list-workspaces --all); do
     background.corner_radius=5 \
     background.drawing=on \
     background.border_width=1 \
+    background.border_color="$TEXT_WHITE" \
     background.height=23 \
     background.padding_right=5 \
     background.padding_left=5 \
