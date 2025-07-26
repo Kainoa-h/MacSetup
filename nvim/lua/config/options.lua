@@ -9,4 +9,5 @@ if vim.g.neovide then
   vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
   vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
   vim.keymap.set("i", "<D-v>", "<C-R>+") -- Paste insert mode
+  vim.g.neovide_hide_mouse_when_typing = true
 end

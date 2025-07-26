@@ -1,6 +1,7 @@
 frame = "buttonless"
+title-hidden = true
 fork = true
 
 [font]
 normal = ["ComicShannsMono Nerd Font"]
-size = 17.0
+size = 20.0
