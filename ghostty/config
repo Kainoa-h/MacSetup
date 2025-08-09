@@ -14,3 +14,7 @@ keybind = super+s>super+s=text::w\n
 font-feature = +liga
 
 mouse-hide-while-typing = true
+
+# this overwrites moving up & down split terminal panes
+keybind = all:alt+cmd+down=scroll_page_lines:25
+keybind = all:alt+cmd+up=scroll_page_lines:-25
