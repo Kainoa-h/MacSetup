@@ -47,7 +47,7 @@ expand-all-aliases-n-functions() {
 
   if [[ -n "$expanded" ]]; then
     LBUFFER="${before_last}${expanded}"
-    exit 0;
+    return
   fi
 
   expanded="$(declare -f $last_word)"
