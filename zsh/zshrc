@@ -58,6 +58,10 @@ expand-all-aliases-n-functions() {
  
 }
 
+hcb() {
+  fc -l 1 | fzf | awk '{$1=""; sub(/^ /,""); print}' | cb
+}
+
 zle -N expand-all-aliases-n-functions
 bindkey '^@' expand-all-aliases-n-functions  # Ctrl-Space
 
