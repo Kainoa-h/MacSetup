@@ -43,8 +43,6 @@
 (deflayermap (move_stuff)
   i bspc
   o bspc
-  m ret
-  n ret
   a (t! charmod a lsft)
   s (t! charmod s lctl)
   d (t! charmod d lalt)
@@ -53,6 +51,12 @@
   j down
   k up
   l right
+  r S-9
+  u S-0
+  v S-[
+  m S-]
+  b [
+  n ]
   lmet _
   lctl _
   lalt _
