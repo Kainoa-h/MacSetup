@@ -47,3 +47,4 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 (package! org-modern)
+(package! ox-hugo)

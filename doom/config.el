@@ -25,10 +25,10 @@
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;; (setq doom-font (font-spec :family "ComicShannsMono Nerd Font" :size 16)
 ;;       doom-symbol-font(font-spec :family "CaskaydiaCove NF" :size 16))
-(setq doom-font (font-spec :family "ComicShannsMono Nerd Font" :size 16)
-      doom-symbol-font (font-spec :family "CaskaydiaCove NF" :size 16)
+(setq doom-font (font-spec :family "ComicShannsMono Nerd Font" :size 18)
+      doom-symbol-font (font-spec :family "CaskaydiaCove NF" :size 18)
       doom-big-font (font-spec :family "ComicShannsMono Nerd Font" :size 24))
-;;
+                                        ;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -53,10 +53,7 @@
   ;; Set the directory where your daily notes will be stored.
   ;; It's good practice to make this a subdirectory of your main org-roam-directory.
   (setq org-roam-dailies-directory "/Users/kai/org/roam/dailies")
-  (setq org-agenda-files
-        (list
-         org-roam-directory
-         org-roam-dailies-directory))
+  (add-to-list 'org-agenda-files org-roam-dailies-directory)
   ;; Define the template for your daily notes.
   ;; This is the most powerful part of the configuration.
   (setq org-roam-dailies-capture-templates
@@ -102,10 +99,43 @@
 
 
 ;; -------------------------------
-;; Directories
+;; Org & Roam Directories
 ;; -------------------------------
-(setq org-directory "~/org")
-(setq org-roam-directory "~/org/roam")
+;; Define all org-related paths in one place, before they are used.
+(setq org-directory (expand-file-name "~/org"))
+(setq org-roam-directory (expand-file-name "roam" org-directory))
+(setq org-roam-dailies-directory (expand-file-name "dailies" org-roam-directory))
+
+
+;; -------------------------------
+;; Org-roam integration
+;; -------------------------------
+(after! org-roam
+  ;; --- Org Roam Dailies ---
+  (require 'org-roam-dailies)
+
+  ;; Add the dailies directory to the agenda files.
+  ;; Doom's +roam2 module handles org-roam-directory, but we must add
+  ;; the dailies directory manually. Using add-to-list is safer than setq.
+  (add-to-list 'org-agenda-files org-roam-dailies-directory)
+
+  ;; Dailies capture template
+  (setq org-roam-dailies-capture-templates
+        '(("d" "default" entry
+           "* %?"
+           :target (file+head "%<%Y-%m-%d>.org"
+                              "#+title: %<%A, %B %d, %Y>\n"))))
+
+  ;; Dailies keybinding
+  (map! :leader :prefix "n" :desc "Org Roam Dailies" "d" #'org-roam-dailies-goto-today)
+
+  ;; --- General Org Roam Settings ---
+  ;; Automatically assign IDs to new nodes
+  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+  ;; Prettify org-roam links
+  (setq org-roam-node-display-template "${title}"))
+
+;; --- Other Org Settings ---
 (setq org-id-locations-file (expand-file-name "org-id-locations" doom-cache-dir))
 (setq org-startup-with-inline-images t)    ;; auto display images
 
@@ -125,15 +155,6 @@
   ;; Prettify inline code/literals
   (setq org-modern-prettify-symbols t)
   (+org-pretty-mode 1))
-
-;; -------------------------------
-;; Org-roam integration
-;; -------------------------------
-(after! org-roam
-  ;; Automatically assign IDs to new nodes
-  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
-  ;; Optionally prettify org-roam links
-  (setq org-roam-node-display-template "${title}"))
 
 ;; -------------------------------
 ;; Faces / Styling
@@ -176,10 +197,32 @@
 (custom-set-faces!
   '(org-block :background "#22242B" :extend t))
 
-
-
-
-
+;; -------------------------------
+;; Babel
+;; -------------------------------
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((java . t)))
+;; -------------------------------
+;; Hugo
+;; -------------------------------
+(after! org
+  (require 'ox-hugo)
+  (setq time-stamp-active t
+        time-stamp-start "#\\+hugo_lastmod:[ \t]*"
+        time-stamp-end "$"
+        time-stamp-format "\[%Y-%m-%d\]")
+  (add-hook 'before-save-hook 'time-stamp))
+;; -------------------------------
+;; Org-Roam templates
+;; -------------------------------
+(after! org
+  (setq org-roam-capture-templates
+        '(("d" "default" plain
+           "%?"
+           :if-new (file+head "${slug}.org"
+                              "#+title: ${title}\n#+filetags:\n#+hugo_section: notes | blog\n#+date: [%<%Y-%m-%d>]\n#+hugo_lastmod: [%<%Y-%m-%d>]\n#+hugo_tags: noexport\n")
+           :unnarrowed t))))
 
 (after! which-key
   (setq which-key-idle-delay 0.2))
