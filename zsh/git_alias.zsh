@@ -3,6 +3,7 @@ function instagit() {
     git commit -a -m "$1"
     git push
 }
+alias ga="git add"
 alias gg="git log --oneline --graph --color --all --decorate"
 alias gms="git merge --squash"
 alias glog="git log --name-status"

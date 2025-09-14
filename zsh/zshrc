@@ -22,7 +22,7 @@ alias zela="zellij a"
 alias kan="sudo ~/Applications/kanata_macos_arm64 --cfg ~/.config/kanata/kanata_mod.kbd > /dev/null"
 alias y="yazi"
 alias cd="z"
-alias terra-a="terraform apply -auto-approve"
+alias t-a="terraform apply -auto-approve"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias sp="tmux send-keys -t spot 'P'"
 alias skbr="sketchybar --reload"
@@ -55,7 +55,6 @@ expand-all-aliases-n-functions() {
   if [[ -n "$expanded" ]]; then
     echo "$expanded" | bat
   fi
- 
 }
 
 hcb() {
@@ -82,6 +81,9 @@ bindkey '^[[B' history-substring-search-down
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
+
+# load mice
+eval "$(mise activate bash)"
 
 # workaround for a bug that happens when startship is initialised multiple times
 # see: https://github.com/starship/starship/issues/3418#issuecomment-1711630970
