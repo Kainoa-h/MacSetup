@@ -18,3 +18,4 @@ mouse-hide-while-typing = true
 # this overwrites moving up & down split terminal panes
 keybind = all:alt+cmd+down=scroll_page_lines:25
 keybind = all:alt+cmd+up=scroll_page_lines:-25
+keybind = shift+enter=text:\x1b\r
