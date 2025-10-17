@@ -61,6 +61,39 @@ hcb() {
   fc -l 1 | fzf | awk '{$1=""; sub(/^ /,""); print}' | cb
 }
 
+clean_code() {
+  echo "🔍 Searching for build artifacts to delete..."
+  echo ""
+  
+  # Find and display what will be deleted
+  local folders=(node_modules build dist .next target out .terraform .python_packages .venv venv)
+  local total_size=0
+  
+  for folder in $folders; do
+    while IFS= read -r dir; do
+      if [[ -d "$dir" ]]; then
+        size=$(du -sh "$dir" 2>/dev/null | cut -f1)
+        echo "Found: $dir ($size)"
+      fi
+    done < <(find . -name "$folder" -type d -prune 2>/dev/null)
+  done
+  
+  echo ""
+  echo -n "⚠️  Delete all these folders? (y/N): "
+  read response
+  
+  if [[ "$response" =~ ^[Yy]$ ]]; then
+    echo ""
+    echo "🗑️  Deleting..."
+    for folder in $folders; do
+      find . -name "$folder" -type d -prune -exec rm -rf '{}' + 2>/dev/null
+    done
+    echo "✅ Done! Run 'du -sh .' to see your new folder size."
+  else
+    echo "❌ Cancelled."
+  fi
+}
+
 zle -N expand-all-aliases-n-functions
 bindkey '^@' expand-all-aliases-n-functions  # Ctrl-Space
 
