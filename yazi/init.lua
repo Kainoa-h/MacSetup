@@ -3,3 +3,8 @@ require("relative-motions"):setup({ show_numbers = "relative", show_motion = tru
 
 -- Rolv-Apneseth/starship
 require("starship"):setup()
+
+-- https://github.com/sxyazi/yazi/discussions/860
+require("zoxide"):setup({
+	update_db = true,
+})
