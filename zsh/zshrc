@@ -116,7 +116,7 @@ compinit
 zstyle ':completion:*' menu select
 
 # load mice
-eval "$(mise activate bash)"
+eval "$(mise activate zsh)"
 
 # workaround for a bug that happens when startship is initialised multiple times
 # see: https://github.com/starship/starship/issues/3418#issuecomment-1711630970
