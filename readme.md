@@ -19,14 +19,15 @@ run `brew services start borders` after installing
 
 ## Kanata | [./kanata](./kanata) | [link 2 project](https://github.com/jtroo/kanata)
 
-Inspired by [this](https://github.com/dreamsofcode-io/home-row-mods)
-with recommendations from [this](https://github.com/jtroo/kanata/discussions/1455#discussion-7766783)
+Inspired by [this](https://github.com/dreamsofcode-io/home-row-mods)\
+with recommendations from [this](https://github.com/jtroo/kanata/discussions/1455#discussion-7766783)\
+& [this](https://www.youtube.com/watch?v=8wZ8FRwOzhU) must watch
 
 - (w e) key chord for esc
 - (o p) key chord for delete word (option+backspace)
 - (j k) key chord for enter/return
-- default ctrl, alt/opt, cmd/meta keys simulate the fn key
 - [Home row mods](https://precondition.github.io/home-row-mods#what-are-home-row-mods)
+![kb-layout](./kb.jpg)
 
 ## ncspot | [./ncspot](./ncspot) | [link 2 project](https://github.com/hrkfdn/ncspot)
 

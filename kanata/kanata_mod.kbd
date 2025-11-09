@@ -26,45 +26,104 @@
   e @che
   o @cho
   p @chp
-  a (t! charmod a lsft)
   s (t! charmod s lctl)
   d (t! charmod d lalt)
   f (t! charmod f lmet)
   j (t! charmod_slow @chj rmet)
   k (t! charmod_slow @chk ralt)
   l (t! charmod l rctl)
-  ; (t! charmod ; rsft)
-  lmet (layer-while-held move_stuff)
-  lctl (layer-while-held move_stuff)
-  lalt (layer-while-held move_stuff)
-  rmet (layer-while-held move_stuff)
+  lmet (t! charmod (one-shot 1000 (layer-while-held fnc)) (layer-while-held aux))
+  rmet (t! charmod (one-shot 1000 (layer-while-held sssymbol)) (layer-while-held symbol))
+  spc (t! charmod spc lsft)
 )
 
-(deflayermap (move_stuff)
-  i bspc
-  o bspc
-  a (t! charmod a lsft)
-  s (t! charmod s lctl)
-  d (t! charmod d lalt)
-  f (t! charmod f lmet)
+(deflayermap (aux)
+  q brdn
+  w brup
+  e mute
+  r vold
+  t volu
+  g pgup
+  b pgdn
   h left
   j down
   k up
   l right
-  r S-9
-  u S-0
-  v S-[
-  m S-]
-  b [
-  n ]
-  lmet _
-  lctl _
-  lalt _
-  f1 brdn
-  f2 brup
-  f10 mute
-  f11 vold
-  f12 volu
+
+  spc ret
+)
+
+(deflayermap (symbol)
+  w '
+  e [
+  r ]
+  d S-[
+  f S-]
+  c S-9
+  v S-0
+  x `
+  
+  h =
+  n S--
+  m 1
+  , 2
+  . 3
+  j 4
+  k 5
+  l 6
+  u 7
+  i 8
+  o 9
+  ; 0
+  p +
+  / -
+
+  spc bspc
+)
+
+(deflayermap (sssymbol)
+  w S-'
+  e [
+  r ]
+  d S-[
+  f S-]
+  c S-9
+  v S-0
+  x S-`
+  
+  h =
+  n S--
+  m S-1
+  , S-2
+  . S-3
+  j S-4
+  k S-5
+  l S-6
+  u S-7
+  i S-8
+  o S-9
+  ; S-0
+  p +
+  / -
+
+  spc bspc
+)
+
+(deflayermap (fnc)
+  x f1
+  c f2
+  v f3
+  s f4
+  d f5
+  f f6
+  w f7
+  e f8
+  r f9
+  t f10
+  g f11
+  b f12
+
+  spc S-ret
 )
 
 (defchords escape 30
