@@ -1,0 +1,4 @@
+map J nextTab
+map K previousTab
+map <up> scrollFullPageUp
+map <down> scrollFullPageDown
