@@ -23,11 +23,21 @@ Inspired by [this](https://github.com/dreamsofcode-io/home-row-mods)\
 with recommendations from [this](https://github.com/jtroo/kanata/discussions/1455#discussion-7766783)\
 & [this](https://www.youtube.com/watch?v=8wZ8FRwOzhU) must watch
 
-- (w e) key chord for esc
-- (o p) key chord for delete word (option+backspace)
-- (j k) key chord for enter/return
+made to be a single sensible config for both a split keyboard like the corne and a normal keyboard/
+
+- makes better use of the largest key on a standard keyboard (the space key)
+- quick access to common vim keys with sticky left meta key layer:
+  - j -> $
+  - l -> ^
+- intuitive paragraph scrolling in vim:
+  - (right meta + d/f) mirrors the j/k up down
+- chords for common utility keys
+  - (w e) key chord for esc
+  - (o p) key chord for delete word (option+backspace)
+  - (j k) key chord for enter/return
 - [Home row mods](https://precondition.github.io/home-row-mods#what-are-home-row-mods)
 ![kb-layout](./kb.jpg)
+*image is slightly outdated. i'll fix it eventually*
 
 ## ncspot | [./ncspot](./ncspot) | [link 2 project](https://github.com/hrkfdn/ncspot)
 
