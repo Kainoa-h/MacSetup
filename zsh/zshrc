@@ -15,20 +15,18 @@ alias ll="eza -laBhHF"
 alias lg="eza -laBhHF --git-repos --git --no-permissions"
 alias config="z $HOME/.config; v .; z -"
 alias cb="pbcopy"
-# alias split="split_tab"
 alias v="nvim"
 alias rm="trash"
-alias zela="zellij a"
 alias kan="sudo kanata --cfg ~/.config/kanata/kanata_mod.kbd > /dev/null"
 alias y="yazi"
 alias cd="z"
-alias t-a="terraform apply -auto-approve"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias sp="tmux send-keys -t spot 'P'"
 alias skbr="sketchybar --reload"
 ## kills whatsap cuz it fucking doesn't close properly with command+q
 alias kws="ps aux | grep WhatsApp.app/Contents/MacOS | awk '{print \$2}' | xargs kill -9"
 alias src="source ~/.zshrc"
+alias h="z ~"
 
 s() {
   if tmux has-session -t spot; then
