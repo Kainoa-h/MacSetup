@@ -51,14 +51,15 @@
   l right
 
   rmet ret
+  spc (t! charmod ret lsft)
 )
 
 (deflayermap (symbol)
   w '
   e [
   r ]
-  d S-[
-  f S-]
+  d (t! charmod S-[ lalt)
+  f (t! charmod S-] lalt)
   c S-9
   v S-0
   x `
@@ -79,6 +80,7 @@
   / -
 
   lmet bspc
+  spc (t! charmod bspc lsft)
 )
 
 (deflayermap (sssymbol)
@@ -107,6 +109,7 @@
   / -
 
   lmet A-bspc
+  spc (t! charmod A-bspc lsft)
 )
 
 (deflayermap (fnc)
@@ -124,6 +127,7 @@
   b f12
 
   rmet S-ret
+  spc (t! charmod S-ret lsft)
 )
 
 (defchords escape 30
