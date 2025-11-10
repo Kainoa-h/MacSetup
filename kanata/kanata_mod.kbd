@@ -50,7 +50,7 @@
   k up
   l right
 
-  spc ret
+  rmet ret
 )
 
 (deflayermap (symbol)
@@ -78,7 +78,7 @@
   p +
   / -
 
-  spc bspc
+  lmet bspc
 )
 
 (deflayermap (sssymbol)
@@ -106,7 +106,7 @@
   p +
   / -
 
-  spc bspc
+  lmet A-bspc
 )
 
 (deflayermap (fnc)
@@ -123,7 +123,7 @@
   g f11
   b f12
 
-  spc S-ret
+  rmet S-ret
 )
 
 (defchords escape 30
