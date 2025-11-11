@@ -110,6 +110,7 @@
 
   lmet A-bspc
   spc (t! charmod A-bspc lsft)
+  rmet (layer-switch normal)
 )
 
 (deflayermap (fnc)
@@ -128,6 +129,18 @@
 
   rmet S-ret
   spc (t! charmod S-ret lsft)
+)
+
+(deflayermap (normal)
+  rmet (t! charmod sldr rmet)
+)
+
+(defseq
+  back-to-main-layer (lmet)
+)
+
+(defvirtualkeys
+  back-to-main-layer (layer-switch main)
 )
 
 (defchords escape 30

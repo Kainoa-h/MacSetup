@@ -28,14 +28,17 @@ made to be a single sensible config for both a split keyboard like the corne and
 - makes better use of the largest key on a standard keyboard (the space key)
 - quick access to common vim keys with sticky left meta key layer:
   - j -> $
+  - k -> %
   - l -> ^
 - intuitive paragraph scrolling in vim:
   - (right meta + d/f) mirrors the j/k up down
 - chords for common utility keys
-  - (w e) key chord for esc
-  - (o p) key chord for delete word (option+backspace)
-  - (j k) key chord for enter/return
+  - (w e) key chord -> esc
+  - (o p) key chord -> delete word (option+backspace)
+  - (j k) key chord -> enter/return
 - [Home row mods](https://precondition.github.io/home-row-mods#what-are-home-row-mods)
+- tapping right meta twice switches to a 'normal' layer, for gaming, or when other people need to use the keyboard
+  - from the 'normal' layer: tapping right meta followed by left meta goes back to the main layer
 ![kb-layout](./kb.jpg)
 *image is slightly outdated. i'll fix it eventually*
 
