@@ -127,6 +127,21 @@
   g f11
   b f12
 
+  h =
+  n S--
+  m S-1
+  , S-2
+  . S-3
+  j S-4
+  k S-5
+  l S-6
+  u S-7
+  i S-8
+  o S-9
+  ; S-0
+  p +
+  / -
+
   rmet S-ret
   spc (t! charmod S-ret lsft)
 )
