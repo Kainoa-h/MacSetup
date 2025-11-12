@@ -35,6 +35,46 @@
   lmet (t! charmod (one-shot 1000 (layer-while-held fnc)) (layer-while-held aux))
   rmet (t! charmod (one-shot 1000 (layer-while-held sssymbol)) (layer-while-held symbol))
   spc (t! charmod spc lsft)
+
+  esc XX
+  tab XX
+  caps XX
+  del XX
+  bspc XX
+  ret XX
+  lsft XX
+  rsft XX
+  lctl XX
+  rctl XX
+  grv XX
+  1 XX
+  2 XX
+  3 XX
+  4 XX
+  5 XX
+  6 XX
+  7 XX
+  8 XX
+  9 XX
+  0 XX
+  - XX
+  = XX
+  f1 XX
+  f2 XX
+  f3 XX
+  f4 XX
+  f5 XX
+  f6 XX
+  f7 XX
+  f8 XX
+  f9 XX
+  f10 XX
+  f11 XX
+  f12 XX
+  [ XX
+  ] XX
+  ' XX
+  \ XX
 )
 
 (deflayermap (aux)
