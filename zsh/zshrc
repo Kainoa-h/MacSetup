@@ -21,7 +21,7 @@ alias kan="sudo kanata --port 1012 --cfg ~/.config/kanata/kanata_mod.kbd > /dev/
 alias y="yazi"
 alias cd="z"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-alias sp="tmux send-keys -t spot 'P'"
+alias sp="ncspot-controller playpause"
 alias skbr="sketchybar --reload"
 ## kills whatsap cuz it fucking doesn't close properly with command+q
 alias kws="ps aux | grep WhatsApp.app/Contents/MacOS | awk '{print \$2}' | xargs kill -9"
@@ -30,7 +30,7 @@ alias h="z ~"
 
 s() {
   if tmux has-session -t spot; then
-    (sleep 5; sketchybar --set ncspot drawing=on) &; tmux a -t spot
+    tmux a -t spot
   else
     tmux new-session -s spot "(sleep 5; sketchybar --set ncspot drawing=on) &; ncspot"
   fi
