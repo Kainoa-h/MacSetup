@@ -51,6 +51,10 @@ configs for a service that listens for kanata layer changes and runs a script to
 
 - sane play/pause icon config
 
+## ncspot | [./ncspot-controller](./ncspot-controller) | [link 2 project](https://github.com/Kainoa-h/ncspot-controller)
+
+configs for a service that wraps the ncspot unix socket to integrate with sketchybar
+
 ## Neovide | [./neovide](./neovide) | [link 2 project](https://github.com/neovide/neovide)
 
 - `fork=true` so it doesn't block the shell after launch

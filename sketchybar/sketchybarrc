@@ -168,7 +168,8 @@ sketchybar --add item clock right \
   label.padding_right=8 \
   \
   --add item ncspot e \
-  --set ncspot updates=when_shown update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
+  --set ncspot \
+  drawing=off \
   icon="" \
   background.corner_radius=10 \
   background.color="$BACKGROUND_DARK" \
@@ -177,7 +178,7 @@ sketchybar --add item clock right \
   label.color="$TEXT_WHITE" \
   label.max_chars=15 \
   scroll_texts=true \
-  click_script="tmux send-keys -t spot 'P'" \
+  click_script="ncspot-controller playpause" \
   \
   --add item day e \
   --set day label.max_chars=20 \
