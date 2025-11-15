@@ -19,6 +19,9 @@ case "$1" in
 "fnc")
   bg=$BACKGROUND_DARK_RED
   ;;
+"normal")
+  bg=$TEXT_RED
+  ;;
 *)
   bg=$BACKGROUND_DARK
   ;;

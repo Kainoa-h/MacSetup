@@ -155,7 +155,6 @@
 
   lmet A-bspc
   spc (t! charmod A-bspc lsft)
-  rmet (layer-switch normal)
 )
 
 (deflayermap (fnc)
@@ -189,6 +188,7 @@
   p +
   / -
 
+  lmet (layer-switch normal)
   rmet S-ret
   spc (t! charmod S-ret lsft)
 )
