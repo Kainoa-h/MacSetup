@@ -1,0 +1,11 @@
+# Kanata TCP Client Configuration
+
+# Port that kanata's TCP server is listening on
+port = 1012
+
+# Path to the script to execute on layer change
+# The layer name will be passed as the first argument
+script_path = "~/.config/kanata_observer/layer_change.sh"
+
+# Log level: "info", "debug", or "trace"
+log_level = "info"

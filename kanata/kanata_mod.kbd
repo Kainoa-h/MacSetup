@@ -33,7 +33,7 @@
   k (t! charmod_slow @chk ralt)
   l (t! charmod l rctl)
   lmet (t! charmod (one-shot 1000 (layer-while-held fnc)) (layer-while-held aux))
-  rmet (t! charmod (one-shot 1000 (layer-while-held sssymbol)) (layer-while-held symbol))
+  rmet (t! charmod (one-shot 1000 (layer-while-held symb^)) (layer-while-held symb))
   spc (t! charmod spc lsft)
 
   esc XX
@@ -95,7 +95,7 @@
   spc (t! charmod ret lsft)
 )
 
-(deflayermap (symbol)
+(deflayermap (symb)
   a tab
   w '
   e [
@@ -125,7 +125,7 @@
   spc (t! charmod bspc lsft)
 )
 
-(deflayermap (sssymbol)
+(deflayermap (symb^)
   a tab
   w S-'
   e [

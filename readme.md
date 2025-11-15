@@ -42,6 +42,11 @@ made to be a single sensible config for both a split keyboard like the corne and
 ![kb-layout](./kb.jpg)
 *image is slightly outdated. i'll fix it eventually*
 
+## Kanata observer | [./kanata_observer](./kanata_observer) | [link 2 project](https://github.com/Kainoa-h/kanata-layer-observer)
+
+configs for a service that listens for kanata layer changes and runs a script to update sketchybar
+![](./kanata-skbr-widget.gif)
+
 ## ncspot | [./ncspot](./ncspot) | [link 2 project](https://github.com/hrkfdn/ncspot)
 
 - sane play/pause icon config

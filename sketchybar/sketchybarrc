@@ -145,6 +145,7 @@ sketchybar --add item clock right \
   \
   --add item wifi.pub.addr popup.wifi \
   --set wifi.pub.addr icon="󰖟" \
+  \
   --add item swap e \
   --set swap update_freq=60 script="$PLUGIN_DIR/memswap.sh" \
   icon="" \
@@ -155,6 +156,16 @@ sketchybar --add item clock right \
   icon.padding_left=8 \
   label.padding_right=8 \
   click_script="open -a 'Activity Monitor'" \
+  \
+  --add item kan e --set kan \
+  icon="" \
+  label="main" \
+  background.corner_radius=10 \
+  background.color="$BACKGROUND_DARK" \
+  background.height=30 \
+  label.font="Hack Nerd Font:Italic:13.0" \
+  icon.padding_left=8 \
+  label.padding_right=8 \
   \
   --add item ncspot e \
   --set ncspot updates=when_shown update_freq=2 script="$PLUGIN_DIR/ncspot.sh" \
