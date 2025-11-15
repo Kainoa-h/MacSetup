@@ -117,13 +117,11 @@ idk zed editor configs ig
 Default keybindings, clashes with aerospace bindings.
 Might fix at some point, maybe...
 
-## ZSH (with OMZ) | [./zsh](./zsh) | [link 2 project](https://github.com/ohmyzsh/ohmyzsh)
+## ZSH (with Starship.rs) | [./zsh](./zsh) | [link 2 project](https://starship.rs)
 
 Add symlink to home dir `ln -s ~/.config/zsh/zshrc ~/.zshrc`
 
-### ZSH Dependencies
-
-- [theme](https://github.com/egorlem/ultima.zsh-theme)
+Starship prompt config: [./starship.toml](./starship.toml)
 
 ## Other Tools
 
