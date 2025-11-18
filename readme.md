@@ -2,22 +2,22 @@
 
 ![desktop screenshot](image.png)
 
-## Aerospace | [./aerospace](./aerospace) | [link 2 project](https://github.com/nikitabobko/AeroSpace)
+## Aerospace | [./aerospace](./aerospace) | [link 2 project](https://github.com/nikitabobko/AeroSpace#readme)
 
 Mostly default config
 
 - Added stuff to work with Sketchybar
 
-## JankyBorders | [./borders](./borders) | [link 2 project](https://github.com/FelixKratz/JankyBorders)
+## JankyBorders | [./borders](./borders) | [link 2 project](https://github.com/FelixKratz/JankyBorders#readme)
 
 run `brew services start borders` after installing
 
-## Ghostty | [./ghostty](./ghostty) | [link 2 project](https://github.com/ghostty-org/ghostty)
+## Ghostty | [./ghostty](./ghostty) | [link 2 project](https://github.com/ghostty-org/ghostty#readme)
 
 - Transparent background
 - ctrl+p for doom drop down terminal
 
-## Kanata | [./kanata](./kanata) | [link 2 project](https://github.com/jtroo/kanata)
+## Kanata | [./kanata](./kanata) | [link 2 project](https://github.com/jtroo/kanata#readme)
 
 Inspired by [this](https://github.com/dreamsofcode-io/home-row-mods)\
 with recommendations from [this](https://github.com/jtroo/kanata/discussions/1455#discussion-7766783)\
@@ -42,24 +42,24 @@ made to be a single sensible config for both a split keyboard like the corne and
 ![kb-layout](./kb.jpg)
 *image is slightly outdated. i'll fix it eventually*
 
-## Kanata observer | [./kanata_observer](./kanata_observer) | [link 2 project](https://github.com/Kainoa-h/kanata-layer-observer)
+## Kanata observer | [./kanata_observer](./kanata_observer) | [link 2 project](https://github.com/Kainoa-h/kanata-layer-observer#readme)
 
 configs for a service that listens for kanata layer changes and runs a script to update sketchybar
 ![](./kanata-skbr-widget.gif)
 
-## ncspot | [./ncspot](./ncspot) | [link 2 project](https://github.com/hrkfdn/ncspot)
+## ncspot | [./ncspot](./ncspot) | [link 2 project](https://github.com/hrkfdn/ncspot#readme)
 
 - sane play/pause icon config
 
-## ncspot | [./ncspot-controller](./ncspot-controller) | [link 2 project](https://github.com/Kainoa-h/ncspot-controller)
+## ncspot | [./ncspot-controller](./ncspot-controller) | [link 2 project](https://github.com/Kainoa-h/ncspot-controller#readme)
 
 configs for a service that wraps the ncspot unix socket to integrate with sketchybar
 
-## Neovide | [./neovide](./neovide) | [link 2 project](https://github.com/neovide/neovide)
+## Neovide | [./neovide](./neovide) | [link 2 project](https://github.com/neovide/neovide#readme)
 
 - `fork=true` so it doesn't block the shell after launch
 
-## neovim | [./nvim](./nvim) | [link 2 project](https://github.com/folke/lazy.nvim)
+## neovim | [./nvim](./nvim) | [link 2 project](https://github.com/folke/lazy.nvim#readme)
 
 - using [lazy](https://www.lazyvim.org/)
 
@@ -70,13 +70,13 @@ configs for a service that wraps the ncspot unix socket to integrate with sketch
 - central [vimrc config](./obsidian/.obsidian.vimrc) for all vaults to symlink to
 - [shell script](./obsidian/dayplanner.sh) for [day planner plugin](https://github.com/Kainoa-h/obsidian-day-planner-event-exec/tree/main) to execute
 
-## rustfmt | [./rustfmt](./rustfmt) | [link 2 project](https://github.com/rust-lang/rustfmt)
+## rustfmt | [./rustfmt](./rustfmt) | [link 2 project](https://github.com/rust-lang/rustfmt#readme)
 
 Just how I like my rust to be formatted
 
-## SketchyBar | [./sketchybar](./sketchybar) | [link 2 project](https://github.com/FelixKratz/SketchyBar)
+## SketchyBar | [./sketchybar](./sketchybar) | [link 2 project](https://github.com/FelixKratz/SketchyBar#readme)
 
-Custom taskbar using [SbarLua](https://github.com/FelixKratz/SbarLua) for improved performance
+Custom taskbar using [SbarLua](https://github.com/FelixKratz/SbarLua#readme) for improved performance
 
 #### Core Config (Lua)
 
