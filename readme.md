@@ -70,13 +70,12 @@ configs for a service that wraps the ncspot unix socket to integrate with sketch
 - central [vimrc config](./obsidian/.obsidian.vimrc) for all vaults to symlink to
 - [shell script](./obsidian/dayplanner.sh) for [day planner plugin](https://github.com/Kainoa-h/obsidian-day-planner-event-exec/tree/main) to execute
 
-## rustfmt | [./rustfmt](./rustfmt) | [link 2 project](https://github.com/rust-lang/rustfmt#readme)
-
-Just how I like my rust to be formatted
-
 ## SketchyBar | [./sketchybar](./sketchybar) | [link 2 project](https://github.com/FelixKratz/SketchyBar#readme)
 
-Custom taskbar using [SbarLua](https://github.com/FelixKratz/SbarLua#readme) for improved performance
+Custom taskbar
+
+Migrated from bash script config to [SbarLua](https://github.com/FelixKratz/SbarLua#readme) for improved performance\
+Last commit before moving to SBarLua config:[0a0711f](https://github.com/Kainoa-h/MacSetup/commit/0a0711f22cc3946bbf51d15abcc5d9703dd8638e)
 
 #### Core Config (Lua)
 
