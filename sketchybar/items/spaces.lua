@@ -184,12 +184,6 @@ end
 -- Load icons on startup for non-empty workspaces
 update_all_workspaces()
 
--- Add padding items
-sbar.add("item", "spacePaddingLeft", {
-	position = "left",
-	padding_left = -18,
-})
-
 -- Create space separator that handles events
 local poop = sbar.add("item", "poop", {
 	position = "q",
@@ -219,18 +213,11 @@ poop:subscribe("aerospace_monitor_change", function(env)
 	end
 end)
 
-sbar.add("item", "spacePaddingRight", {
-	position = "left",
-	padding_left = -18,
-})
-
 -- Create spaces bracket
 local space_names = {}
 for _, sid in ipairs(all_workspaces) do
 	table.insert(space_names, "space." .. sid)
 end
-table.insert(space_names, "spacePaddingLeft")
-table.insert(space_names, "spacePaddingRight")
 
 sbar.add("bracket", "spaces", space_names, {
 	background = {
