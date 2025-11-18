@@ -90,6 +90,8 @@
   j down
   k up
   l right
+  ; '
+  / -
 
   rmet ret
   spc (t! charmod ret lsft)
