@@ -76,23 +76,38 @@ Just how I like my rust to be formatted
 
 ## SketchyBar | [./sketchybar](./sketchybar) | [link 2 project](https://github.com/FelixKratz/SketchyBar)
 
-Custom taskbar
+Custom taskbar using [SbarLua](https://github.com/FelixKratz/SbarLua) for improved performance
 
-Plugins:
+#### Core Config (Lua)
 
-- [aerospace.sh](./sketchybar/plugins/aerospace.sh): Updates sketchybar spaces
-- [battery.sh](./sketchybar/plugins/battery.sh): Updates battery widget
-- [clock.sh](./sketchybar/plugins/clock.sh): Updates clock widget
-- [colors.sh](./sketchybar/plugins/colors.sh): Common color config
-- [icon_map.sh](./sketchybar/plugins/icon_map_fn.sh): Provides app name to icon mapping
-- [layer_change.sh](./sketchybar/plugins/layer_change.sh): Hook script called by [kanata-layer-observer](https://github.com/Kainoa-h/kanata-layer-observer#readme)
-- [memswap.sh](./sketchybar/plugins/memswap.sh): Updates memswap widget that displays amount of swap memory used
-- [ncspot_hover.sh](./sketchybar/plugins/ncspot_hover.sh): Handles hover events for the ncspot widget
-- [ncspot_controller_hook.sh](./sketchybar/plugins/ncspot_controller_hook.sh): Hook script called by [ncspot-controller](https://github.com/Kainoa-h/ncspot-controller#readme)
-- [obsididan_day_planner.sh](./sketchybar/plugins/obsidian_day_planner.sh): Updates widget that displays current day planner task in obsidian
-- [space_windows.sh](./sketchybar/plugins/space_windows.sh): Updates spaces
-- [volume.sh](./sketchybar/plugins/volume.sh): Updates volume widget
-- [wifi.sh](./sketchybar/plugins/wifi.sh): Updates wifi widget
+- [sketchybarrc](./sketchybar/sketchybarrc): Main entry point, loads SbarLua module
+- [init.lua](./sketchybar/init.lua): Configuration loader
+- [bar.lua](./sketchybar/bar.lua): Bar appearance configuration
+- [default.lua](./sketchybar/default.lua): Default item properties
+- [colors.lua](./sketchybar/colors.lua): Color constants
+- [brackets.lua](./sketchybar/brackets.lua): Item groupings
+
+#### Items (Lua)
+
+- [spaces.lua](./sketchybar/items/spaces.lua): Aerospace workspace integration with diff-based state management
+- [battery.lua](./sketchybar/items/battery.lua): Battery status widget
+- [clock.lua](./sketchybar/items/clock.lua): Time display
+- [wifi.lua](./sketchybar/items/wifi.lua): Network status with IP display
+- [volume.lua](./sketchybar/items/volume.lua): Volume control widget
+- [swap.lua](./sketchybar/items/swap.lua): Swap memory usage indicator
+- [kan.lua](./sketchybar/items/kan.lua): Kanata layer indicator
+- [ncspot.lua](./sketchybar/items/ncspot.lua): Spotify/ncspot integration
+- [day.lua](./sketchybar/items/day.lua): Day planner widget
+
+#### Helpers (Lua)
+
+- [icon_map.lua](./sketchybar/helpers/icon_map.lua): App name to icon mapping. Lua port of [this](https://github.com/kvndrsslr/sketchybar-app-font)
+
+#### Shell Plugins (hooks)
+
+- [layer_change.sh](./sketchybar/plugins/layer_change.sh): Hook called by [kanata-layer-observer](https://github.com/Kainoa-h/kanata-layer-observer#readme)
+- [ncspot_controller_hook.sh](./sketchybar/plugins/ncspot_controller_hook.sh): Hook called by [ncspot-controller](https://github.com/Kainoa-h/ncspot-controller#readme)
+- [obsidian_day_planner.sh](./sketchybar/plugins/obsidian_day_planner.sh): Hook called by [Obsidian day planner plugin fork](https://github.com/Kainoa-h/obsidian-day-planner-event-exec#readme)
 
 #### Dependencies
 
