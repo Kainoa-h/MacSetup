@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 source "$CONFIG_DIR/plugins/colors.sh"
 
 PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
@@ -9,23 +9,23 @@ if [ "$PERCENTAGE" = "" ]; then
 fi
 
 case "${PERCENTAGE}" in
-  9[0-9]|100)
-    ICON=""
-    COLOUR=$TEXT_GREY
-    ;;
-  [6-8][0-9]) 
-    ICON=""
-    COLOUR=$TEXT_GREY
-    ;;
-  [3-5][0-9]) 
-    ICON=""
-    COLOUR=$TEXT_ORGANGE
-    ;;
-  [1-2][0-9]) 
-    ICON=""
-    COLOUR=$TEXT_RED
-    ;;
-  *) ICON=""
+9[0-9] | 100)
+  ICON=""
+  COLOUR=$TEXT_GREY
+  ;;
+[6-8][0-9])
+  ICON=""
+  COLOUR=$TEXT_GREY
+  ;;
+[3-5][0-9])
+  ICON=""
+  COLOUR=$TEXT_ORGANGE
+  ;;
+[1-2][0-9])
+  ICON=""
+  COLOUR=$TEXT_RED
+  ;;
+*) ICON="" ;;
 esac
 
 if [[ "$CHARGING" != "" ]]; then

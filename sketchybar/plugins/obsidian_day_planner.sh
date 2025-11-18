@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This is should be invoked by:
 # https://github.com/Kainoa-h/obsidian-day-planner-event-exec

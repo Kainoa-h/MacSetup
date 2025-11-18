@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ "$SENDER" == "aerospace_monitor_change" ]]; then
   sketchybar --set space."$FOCUSED_WORKSPACE" display="$TARGET_MONITOR"

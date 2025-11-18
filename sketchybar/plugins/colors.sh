@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export TEXT_WHITE=0xFFFFFFFF
 export TEXT_GREY=0xff65605d

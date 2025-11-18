@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 source "$CONFIG_DIR/plugins/colors.sh"
 
 DEFCOLOR=$TEXT_WHITE
@@ -13,4 +13,3 @@ else
 fi
 
 sketchybar --set "$NAME" label="$TOTALSWAP" icon.color="$clr" label.color="$clr"
-

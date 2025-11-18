@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ "$SENDER" == "mouse.entered" ]; then
   sketchybar --set ncspot popup.drawing=on
