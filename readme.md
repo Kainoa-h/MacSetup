@@ -85,9 +85,10 @@ Plugins:
 - [clock.sh](./sketchybar/plugins/clock.sh): Updates clock widget
 - [colors.sh](./sketchybar/plugins/colors.sh): Common color config
 - [icon_map.sh](./sketchybar/plugins/icon_map_fn.sh): Provides app name to icon mapping
+- [layer_change.sh](./sketchybar/plugins/layer_change.sh): Hook script called by [kanata-layer-observer](https://github.com/Kainoa-h/kanata-layer-observer#readme)
 - [memswap.sh](./sketchybar/plugins/memswap.sh): Updates memswap widget that displays amount of swap memory used
-- [ncspot_hover.sh](./sketchybar/plugins/ncspot_hover.sh): handles hover events for the ncspot widget
-- [ncspot_controller_hook.sh](./sketchybar/plugins/ncspot_controller_hook.sh): hook script called by [ncspot-controller](https://github.com/Kainoa-h/ncspot-controller#readme)
+- [ncspot_hover.sh](./sketchybar/plugins/ncspot_hover.sh): Handles hover events for the ncspot widget
+- [ncspot_controller_hook.sh](./sketchybar/plugins/ncspot_controller_hook.sh): Hook script called by [ncspot-controller](https://github.com/Kainoa-h/ncspot-controller#readme)
 - [obsididan_day_planner.sh](./sketchybar/plugins/obsidian_day_planner.sh): Updates widget that displays current day planner task in obsidian
 - [space_windows.sh](./sketchybar/plugins/space_windows.sh): Updates spaces
 - [volume.sh](./sketchybar/plugins/volume.sh): Updates volume widget
