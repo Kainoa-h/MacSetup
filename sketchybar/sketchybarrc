@@ -179,6 +179,22 @@ sketchybar --add item clock right \
   label.max_chars=15 \
   scroll_texts=true \
   click_script="ncspot-controller playpause" \
+  script="$PLUGIN_DIR/ncspot_hover.sh" \
+  popup.background.border_width=0 \
+  popup.background.border_color="0x000000" \
+  popup.background.corner_radius=10 \
+  popup.align="center" \
+  popup.y_offset=0 \
+  --subscribe ncspot mouse.entered mouse.exited \
+  \
+  --add item ncspot.img popup.ncspot \
+  --set ncspot.img \
+  background.drawing="on" \
+  background.image="/tmp/ncspot-controller-cover.jpg" \
+  background.image.drawing="on" \
+  background.image.corner_radius=10 \
+  background.image.scale=0.5 \
+  background.corner_radius=10 \
   \
   --add item day e \
   --set day label.max_chars=20 \

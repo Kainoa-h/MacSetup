@@ -1,1 +1,2 @@
 hook_script = "~/.config/sketchybar/plugins/ncspot_controller_hook.sh"
+download_cover = true
