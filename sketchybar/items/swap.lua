@@ -28,6 +28,9 @@ swap:subscribe({ "routine", "system_woke" }, function(env)
 		else
 			swap:set({
 				drawing = "on",
+				label = {
+					string = result,
+				},
 			})
 		end
 	end)
