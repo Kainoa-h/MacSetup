@@ -7,7 +7,7 @@ local clock = sbar.add("item", "clock", {
 	label = {
 		color = colors.TEXT_WHITE,
 		font = "alarm clock:Regular:18.0",
-		padding_right = 10,
+		padding_right = 20,
 	},
 	background = {
 		color = colors.BACKGROUND_DARK,

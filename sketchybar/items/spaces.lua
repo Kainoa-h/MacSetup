@@ -123,6 +123,7 @@ end
 
 -- Function to update all workspace states (with diff-based optimization)
 local function update_all_workspaces()
+	sbar.begin_config()
 	-- Build partial state from aerospace (only non-empty workspaces)
 	local new_state = build_current_state()
 
@@ -179,6 +180,7 @@ local function update_all_workspaces()
 			end
 		end
 	end
+	sbar.end_config()
 end
 
 -- Load icons on startup for non-empty workspaces
