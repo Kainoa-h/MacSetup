@@ -118,6 +118,15 @@ local function build_current_state()
 		end
 	end
 
+	-- Ensure focused workspace is always visible, even if empty
+	if state[focused_workspace] == nil then
+		state[focused_workspace] = {
+			drawing = "on",
+			label_string = "",
+			icon_color = colors.TEXT_WHITE,
+		}
+	end
+
 	return state
 end
 
