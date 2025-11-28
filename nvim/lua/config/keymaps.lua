@@ -41,3 +41,7 @@ end, { desc = "Step Over" })
 
 vim.keymap.set("n", "<C-S-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-S-k>", "<cmd>cprev<CR>")
+
+vim.keymap.set("n", "<leader>b/", function()
+  require("telescope.builtin").current_buffer_fuzzy_find()
+end, { desc = "Fuzzy find in current buffer" })
