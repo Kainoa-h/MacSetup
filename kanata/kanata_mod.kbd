@@ -29,12 +29,15 @@
   w @chw
   e @che
   ; @ch;
-  s (t! charmod s lctl)
-  d (t! charmod d lalt)
-  f (t! charmod f lmet)
-  j (t! charmod_slow @chj rmet)
-  k (t! charmod_slow @chk ralt)
-  l (t! charmod @chl rctl)
+  x (t! charmod x lctl)
+  c (t! charmod c lalt)
+  v (t! charmod v lmet)
+  j @chj
+  k @chk
+  l @chl
+  m (t! charmod m rmet)
+  , (t! charmod , ralt)
+  . (t! charmod . rctl)
   lmet (t! charmod (one-shot 1000 (layer-while-held fnc)) (layer-while-held aux))
   rmet (t! charmod (one-shot 1000 (layer-while-held symb^)) (layer-while-held symb))
   spc (t! charmod_no_repeat_tap spc lsft)
@@ -111,10 +114,10 @@
   w '
   e [
   r ]
-  d (t! charmod S-[ lalt)
-  f (t! charmod S-] lalt)
-  c S-9
-  v S-0
+  d S-[
+  f S-]
+  c (t! charmod S-9 lalt)
+  v (t! charmod S-0 lmet)
   x `
   
   t S-\
