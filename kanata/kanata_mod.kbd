@@ -224,7 +224,7 @@
   (w e) esc
 )
 
-(defchords backspace 500
+(defchords backspace 200
   (l  ) l
   (  ;) ;
   (l ;) A-bspc
