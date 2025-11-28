@@ -7,8 +7,8 @@
 (defalias
   chw (chord escape w)
   che (chord escape e)
-  cho (chord backspace o)
-  chp (chord backspace p)
+  chl (chord backspace l)
+  ch; (chord backspace ;)
   chj (chord enter j)
   chk (chord enter k)
 )
@@ -21,20 +21,23 @@
   (tap-hold 200 200 $char $mod)
 )
 
+(deftemplate charmod_no_repeat_tap (char mod)
+  (tap-hold-release 0 150 $char $mod)
+)
+
 (deflayermap (main)
   w @chw
   e @che
-  o @cho
-  p @chp
+  ; @ch;
   s (t! charmod s lctl)
   d (t! charmod d lalt)
   f (t! charmod f lmet)
   j (t! charmod_slow @chj rmet)
   k (t! charmod_slow @chk ralt)
-  l (t! charmod l rctl)
+  l (t! charmod @chl rctl)
   lmet (t! charmod (one-shot 1000 (layer-while-held fnc)) (layer-while-held aux))
   rmet (t! charmod (one-shot 1000 (layer-while-held symb^)) (layer-while-held symb))
-  spc (t! charmod spc lsft)
+  spc (t! charmod_no_repeat_tap spc lsft)
 
   esc XX
   tab XX
@@ -221,10 +224,10 @@
   (w e) esc
 )
 
-(defchords backspace 30
-  (o  ) o
-  (  p) p
-  (o p) A-bspc
+(defchords backspace 500
+  (l  ) l
+  (  ;) ;
+  (l ;) A-bspc
 )
 
 (defchords enter 30
