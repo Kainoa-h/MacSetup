@@ -39,6 +39,7 @@ vim.keymap.set("n", "<F11>", function()
   require("dap").step_into()
 end, { desc = "Step Over" })
 
+-- Quickfix scroll
 vim.keymap.set("n", "<C-S-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-S-k>", "<cmd>cprev<CR>")
 
