@@ -8,18 +8,14 @@ return {
       },
       servers = {
         pyright = {
-          settings = {
-            python = {
-              pythonPath = function()
-                local venv = vim.fn.getcwd() .. "/.venv/bin/python"
-                if vim.fn.executable(venv) == 1 then
-                  return venv
-                else
-                  return "/opt/homebrew/bin/python3.11"
-                end
-              end,
-            },
-          },
+          on_new_config = function(new_config, _)
+            local venv = vim.fn.getcwd() .. "/.venv/bin/python"
+            if vim.fn.executable(venv) == 1 then
+              new_config.settings.python.pythonPath = venv
+            else
+              new_config.settings.python.pythonPath = "/opt/homebrew/bin/python3.11"
+            end
+          end,
         },
         mojo = {
           cmd = { "pixi", "run", "mojo-lsp-server" },
