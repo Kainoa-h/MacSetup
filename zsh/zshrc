@@ -22,6 +22,7 @@ alias y="yazi"
 alias cd="z"
 alias fdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias sp="ncspot-controller playpause"
+alias sn="ncspot-controller next"
 alias skbr="sketchybar --reload"
 ## kills whatsap cuz it fucking doesn't close properly with command+q
 alias kws="ps aux | grep WhatsApp.app/Contents/MacOS | awk '{print \$2}' | xargs kill -9"
